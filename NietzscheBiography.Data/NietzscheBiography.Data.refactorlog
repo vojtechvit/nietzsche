@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="9b05d44c-4029-4db2-ac4a-db9913747982" ChangeDateTime="05/22/2013 14:26:15">
+    <Property Name="ElementName" Value="[nietzschebiography].[event_title_cache].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[nietzschebiography].[event_title_cache]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="event_id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8e1b0ec9-b202-4da0-8abb-73c2a88066f3" ChangeDateTime="05/22/2013 14:26:19">
+    <Property Name="ElementName" Value="[nietzschebiography].[event_title_cache].[event_id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[nietzschebiography].[event_title_cache]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="title" />
+  </Operation>
+</Operations>

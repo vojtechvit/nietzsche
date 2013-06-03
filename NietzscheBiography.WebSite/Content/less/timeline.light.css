@@ -1,0 +1,70 @@
+﻿div.timeline div.spine {
+  background-color: #CCC;
+}
+div.timeline div.date_separator span {
+  border: 1px solid #BBB;
+  background-color: #FFF;
+  color: #666;
+}
+div.timeline_element {
+  background-color: #FFF;
+  border: 1px solid #CCC;
+  color: #000;
+  text-shadow: none;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+div.timeline_element:hover {
+  border: 1px solid #AAA;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+div.timeline_element div.del {
+  background-color: #222;
+  color: #FFF;
+  border: 1px solid #000;
+}
+div.timeline_element div.title,
+div.timeline_element div.title span.label {
+  color: #AAA;
+}
+div.timeline_element:before {
+  border-top: 1px dashed #CCC;
+}
+div.timeline_element:after {
+  background-color: #BBB;
+  border: 1px solid #FFF;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+div.timeline_element:hover:after {
+  background-color: #FFF;
+  border: 1px solid #CCC;
+  z-index: 100;
+}
+div.timeline_element ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background-color: #FFF;
+}
+div.timeline_element ::-webkit-scrollbar-thumb {
+  background-color: #CCC;
+  border-radius: 5px;
+}
+div.timeline_element ::-webkit-scrollbar-thumb:hover {
+  background-color: #AAA;
+}
+div.timeline_element div.img_container div.img_overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+div.timeline_element.blog_post div.readmore a {
+  color: #222;
+}
+div.timeline_element.blog_post a {
+  color: #7A0004;
+}
+div.timeline_element.gallery div.scroller img {
+  border: 1px solid #CCC;
+  background-color: #FFF;
+}
+div.timeline_overlay div.lightbox {
+  border: 5px solid #FFF;
+  background-color: #FFF;
+}

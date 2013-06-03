@@ -1,0 +1,96 @@
+﻿@using System.Web.Optimization
+@using BootstrapSupport
+@using NavigationRoutes
+@{
+    var siteName = "Nietzsche : A digital biography";
+    var siteDescription = "A digital biography of Friedrich Nietzsche - an EPFL digital humantities project.";
+
+    if (string.IsNullOrEmpty(ViewBag.Title)) { ViewBag.Title = siteName; }
+    if (string.IsNullOrEmpty(ViewBag.Description)) { ViewBag.Description = siteDescription; }
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="@ViewBag.Description" />
+
+    <meta property="og:type" content="biography" />
+    <meta property="og:site_name" content="@siteName" />
+    <meta property="og:image" content="http://1.gravatar.com/blavatar/9d999d6f4b01add35fb7507ab9f72985?s=200" />
+
+    <meta property="og:url" content="@Request.Url.GetLeftPart(UriPartial.Path)" />
+    <meta property="og:title" content="@ViewBag.Title" />
+    <meta property="og:description" content="@ViewBag.Description" />
+
+    <link rel="shortcut icon" href="http://1.gravatar.com/blavatar/7c4f3ccc45091ab6f74d62576b975a83?s=16" type="image/x-icon" sizes="16x16" />
+    <link rel="icon" href="http://1.gravatar.com/blavatar/7c4f3ccc45091ab6f74d62576b975a83?s=16" type="image/x-icon" sizes="16x16" />
+    <link rel="apple-touch-icon-precomposed" href="http://1.gravatar.com/blavatar/9d999d6f4b01add35fb7507ab9f72985?s=114" />
+
+    <meta name="application-name" content="@siteName" />
+    <meta name="msapplication-tooltip" content="@siteDescription" />
+    <meta name="msapplication-starturl" content="/" />
+    <meta name="msapplication-window" content="width=device-width;height=device-height" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @Styles.Render("~/css/common")
+    @RenderSection("Head", required: false)
+    @Html.Partial("_Html5shiv")
+    @Html.Partial("_GoogleAnalytics")
+    @* favicons and touch icons go here *@
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                @if (ViewBag.ActiveParticipant != null && ViewBag.ActiveParticipant.Id != NietzscheConstants.NietzscheId)
+                {
+                    var participant = ViewBag.ActiveParticipant as Participant;
+                    
+                    <a class="brand" href="@Href("~/")" title="Back to Nietzsche Biography homepage"><small>&lt; back</small></a>
+                    <a class="brand" href="@Url.Connection(participant.Id)" title="@participant.Name">@participant.Name</a>
+                }
+                else
+                {
+                    <a class="brand" href="@Href("~/")" title="Go to Nietzsche Biography homepage">Nietzsche</a>
+                }
+                <div class="nav-collapse collapse">
+                    <nav>
+                        <ul class="nav">
+                            @Html.Navigation()
+                        </ul>
+                        <ul class="nav pull-right">
+                            <li><a href="http://nietzschebiography.wordpress.com" title="Project blog">Blog</a></li>
+                            <li><a href="http://nietzschebiography.wordpress.com/2012/11/28/about-project/" title="About the project">About</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        @Html.Partial("_Alerts")
+        @Html.Partial("_ValidationSummary")
+        @RenderBody()
+        <hr>
+        <footer>
+            <p>&copy; @Html.Raw(System.DateTime.Now.Year != 2013 ? "2013&ndash;" + System.DateTime.Now.Year : System.DateTime.Now.Year.ToString()) <a href="http://www.linkedin.com/in/topalov" title="Orlin Topalov on LinkedIn" target="_blank" rel="author">Orlin Topalov</a>, <a href="http://www.vojtechvit.cz/en-us/" title="Vojtěch Vít's personal website" target="_blank" rel="author">Vojtěch Vít</a></p>
+        </footer>
+    </div>
+    @if (IsSectionDefined("BottomNavbar"))
+    {
+        <div class="navbar navbar-fixed-bottom">
+            <div class="navbar-inner">
+                @RenderSection("BottomNavbar", required: false)
+            </div>
+        </div>
+    }
+    @Scripts.Render("~/js/common")
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

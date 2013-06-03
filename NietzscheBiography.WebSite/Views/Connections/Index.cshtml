@@ -1,0 +1,41 @@
+﻿@model NietzscheBiography.WebSite.ViewModels.Connections.Index
+@{
+    ViewBag.Title = "Connections of " + Model.Participant.Name + " : Nietzsche Biography";
+    ViewBag.ActiveParticipant = Model.Participant;
+    ViewBag.Description = "";
+    
+    var activeIndividual = Model.Participant as Individual;
+}
+<header class="page-header">
+    <h1>Connections of @Model.Participant.Name</h1>
+</header>
+<div class="row">
+    <div class="span6">
+        <h2>People</h2>
+        @foreach (var relGroup in Model.Relatives)
+        {
+            <h3>@relGroup.Key</h3>
+            <ol>
+                @foreach (var connection in relGroup.Value) {
+                    <li>@Html.Partial("_IndividualInfo", new { ActiveParticipant = Model.Participant, Individual = connection })</li>
+                }
+            </ol>
+        }
+        <h3>Others</h3>
+        <ol>
+        @foreach (var connection in Model.Others)
+        {
+            <li>@Html.Partial("_IndividualInfo", new { ActiveParticipant = Model.Participant, Individual = connection })</li>
+        }
+        </ol>
+    </div>
+    <div class="span6">
+        <h2>Organizations</h2>
+        <ol>
+        @foreach (var connection in Model.Organizations)
+        {
+            <li>@Html.LinkForConnection(connection.Id, connection.Name)</li>
+        }
+        </ol>
+    </div>
+</div>

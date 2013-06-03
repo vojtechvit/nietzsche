@@ -1,0 +1,73 @@
+﻿@{
+    var mediaItem = Model.MediaItem as NietzscheBiography.WebSite.ViewModels.MediaItemInfo;
+    bool displayAuthors = Model.DisplayAuthors;
+
+    
+    if (displayAuthors)
+    {
+        var authorsLinks = mediaItem.Authors.Select(a =>
+        {
+            var individual = a as Individual;
+            string name = a.Name.ToUpper();
+
+            if (individual != null && individual.FullName.LastName != null)
+            {
+                name = individual.FullName.LastName.ToUpper();
+
+                if (individual.FullName.GivenNames != null)
+                {
+                    name += ", " + individual.FullName.GivenNames;
+                }
+            }
+
+            name = name.TrimEnd('.');
+
+            return Html.LinkForConnection(a.Id, name);
+        });
+        
+        @Html.Raw(Html.TextEnum(authorsLinks) + ".");
+    }
+}
+<em>
+    @{
+        if (mediaItem.TitleIsType && mediaItem.Beneficiaries.FirstOrDefault() != null)
+        {
+            var beneficiariesLinks = mediaItem.Beneficiaries.Select(b =>
+            {
+                var individual = b as Individual;
+                string name = b.Name;
+
+                if (individual != null && individual.FullName.LastName != null)
+                {
+                    name = individual.FullName.LastName;
+                }
+
+                name = name.TrimEnd('.');
+
+                return Html.LinkForConnection(b.Id, name);
+            });
+        
+            <text>@Html.LinkForMediaItem(mediaItem.Id, mediaItem.Title) on @Html.TextEnum(beneficiariesLinks).</text>
+        }
+        else
+        {
+            <text>@Html.LinkForMediaItem(mediaItem.Id, mediaItem.Title).</text>
+        }
+    }
+</em>
+@if (mediaItem.LocationPublished != null && mediaItem.DatePublished != null)
+{
+    <text>@Html.LinkForPlace(@mediaItem.LocationPublished.Id, @mediaItem.LocationPublished.Title), @mediaItem.DatePublished.ToString().</text>
+}
+else if (mediaItem.LocationPublished != null && mediaItem.DatePublished == null)
+{
+    <text>@Html.LinkForPlace(@mediaItem.LocationPublished.Id, @mediaItem.LocationPublished.Title).</text>
+}
+else if (mediaItem.LocationPublished == null && mediaItem.DatePublished != null)
+{
+    <text>@mediaItem.DatePublished.</text>
+}
+@if (mediaItem.Isbn != null)
+{
+    <text><a href="http://www.isbnsearch.org/isbn/@mediaItem.Isbn.Replace("-","")" title="Search by ISBN" target="_blank" rel="nofollow">ISBN @mediaItem.Isbn</a>.</text>
+}

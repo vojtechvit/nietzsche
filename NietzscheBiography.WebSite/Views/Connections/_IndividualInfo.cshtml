@@ -1,0 +1,45 @@
+﻿@{
+    var activeParticipant = Model.ActiveParticipant as Participant;
+    var individual = Model.Individual as IndividualInfo;
+    
+    bool profNat = false;
+    bool relationship = false;
+
+    string name = individual.Name;
+
+    if (individual != null && individual.FullName.LastName != null)
+    {
+        name = individual.FullName.LastName;
+
+        if (individual.FullName.GivenNames != null)
+        {
+            name += ", " + individual.FullName.GivenNames;
+        }
+    }
+
+    name = name.TrimEnd('.');
+
+    @Html.Raw(Html.LinkForConnection(individual.Id, name));
+                    
+    if (individual.Profession != null || individual.Nationality != null)
+    {
+        profNat = true;
+        string firstWord = individual.Nationality != null ? individual.Nationality : individual.Profession;
+        string profession = individual.Profession != null
+                            ? Html.TextEnum(individual.Profession.ToLower().Split(',')).ToString()
+                            : "citizen";
+            
+        @Html.Raw(", " + Html.ArticleFor(firstWord) + " " + individual.Nationality + " " + profession);
+    }
+
+    if (individual.Relationships.FirstOrDefault() != null)
+    {                    
+        relationship = true;
+        @Html.Raw(", " + activeParticipant.Name + "&apos;s " + Html.TextEnum(individual.Relationships.Select(rel => rel.ToLower())));
+    }
+
+    if (profNat || relationship)
+    {
+        @Html.Raw(".");
+    }
+}

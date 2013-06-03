@@ -1,0 +1,80 @@
+﻿@model NietzscheBiography.WebSite.ViewModels.Connections.Detail
+@{
+    ViewBag.Title = Model.Individual.Name + " : Nietzsche Biography";
+    ViewBag.ActiveParticipant = Model.Participant;
+    ViewBag.Description = "";
+    
+    var imageCount = Model.Images.Count();
+    var firstSpan = imageCount > 0 ? "span6" : "span12";
+}
+@section Scripts {
+    <script type="text/javascript">
+        $('.carousel').carousel({
+            interval: 5000
+        });
+    </script>
+}
+<header class="page-header">
+    <h1>@Model.Individual.Name</h1>
+</header>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="@firstSpan">
+            <p>
+                @{
+                    @Html.Raw(Model.Individual.FullName.ToString().TrimEnd(' '))
+        
+                    if (Model.AlternativeNames.FirstOrDefault() != null)
+                    {
+                        @Html.Raw(", also known as " + Html.TextEnum(Model.AlternativeNames.Select(an => "&quot;" + an + "&quot;")));
+                    }
+
+                    if (Model.Nationality != null || Model.Individual.Profession != null)
+                    {
+                        string firstWord = Model.Nationality != null ? Model.Nationality : Model.Individual.Profession;
+                        string profession = Model.Individual.Profession != null
+                                            ? Html.TextEnum(Model.Individual.Profession.ToLower().Split(',')).ToString()
+                                            : "citizen";
+                
+                        @Html.Raw(", " + Html.ArticleFor(firstWord) + " " + Model.Nationality + " " + profession);
+                    }
+                }.
+            </p>
+        </div>
+        @if (imageCount > 0)
+        {
+            <div class="well span6">
+                <div id="gallery-carousel" class="carousel slide">
+                    <ol class="carousel-indicators">
+                        <li data-target="#gallery-carousel" data-slide-to="0" class="active"></li>
+                        @for (var i = 1; i < imageCount; i++)
+                        {
+                            <li data-target="#gallery-carousel" data-slide-to="@i"></li>
+                        }
+                    </ol>
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+                        @{ var first = true; }
+                        @foreach (var image in Model.Images)
+                        {
+                            <div class="item@(first ? " active" : "")">
+                                <img src="@image.Url" alt="@image.Title">
+                                <div class="carousel-caption">
+                                    <h4>@image.Title</h4>
+                                </div>
+                            </div>
+                            
+                            first = false;
+                        }
+                    </div>
+                    @if (imageCount > 1)
+                    {
+                        <!-- Carousel navigation -->
+                        <a class="carousel-control left" href="#gallery-carousel" data-slide="prev">&lsaquo;</a>
+                        <a class="carousel-control right" href="#gallery-carousel" data-slide="next">&rsaquo;</a>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+</div>

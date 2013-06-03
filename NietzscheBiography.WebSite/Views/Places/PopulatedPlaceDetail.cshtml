@@ -1,0 +1,10 @@
+﻿@model NietzscheBiography.WebSite.ViewModels.Places.PopulatedPlaceDetail
+@{
+    ViewBag.Title = @Model.PopulatedPlace.Title + " : Nietzsche Biography";
+    ViewBag.Description = @Model.PopulatedPlace.Title + " : A place related to Friedrich Nietzsche";
+}
+<header>
+    <div class="page-header">
+        <h1>@Model.PopulatedPlace.Title</h1>
+    </div>
+</header>

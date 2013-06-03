@@ -1,0 +1,60 @@
+﻿@model NietzscheBiography.WebSite.ViewModels.Events.Timeline
+@{
+    ViewBag.Title = "Timeline of " + Model.Participant.Name + " : Nietzsche Biography";
+    ViewBag.ActiveParticipant = Model.Participant;
+    ViewBag.Description = "";
+}
+@section Head {
+    @Styles.Render("~/css/timeline")
+}
+@section Scripts {
+    @Scripts.Render("~/js/timeline")
+}
+<header class="page-header">
+    <h1>Timeline of @Model.Participant.Name</h1>
+</header>
+<div id="timeline" data-participant-id="@Model.Participant.Id"></div>
+
+@section BottomNavbar {
+    <div class="container" id="timeline-filter-bar">
+
+        <button type="button" class="btn">Filters:</button>
+
+        <select id="event-importance" class="span2">
+            <option value="" selected="selected">All Events</option>
+            <option value="3">Most Events</option>
+            <option value="6">Important Events</option>
+            <option value="9">Crucial Events</option>
+        </select>
+
+        <select id="timeline-start-year" class="span2">
+            <option value="" selected="selected">Start Year</option>
+            @if (Model.FilterMinYear.HasValue && Model.FilterMaxYear.HasValue)
+            {
+                for (int i = Model.FilterMinYear.Value; i <= Model.FilterMaxYear.Value; i++)
+                {
+                    <option value="@i">@i</option>
+                }
+            }
+        </select>
+
+        <select id="timeline-end-year" class="span2">
+            <option value="" selected="selected">End Year</option>
+            @if (Model.FilterMinYear.HasValue && Model.FilterMaxYear.HasValue)
+            {
+                for (int i = Model.FilterMinYear.Value; i <= Model.FilterMaxYear.Value; i++)
+                {
+                    <option value="@i">@i</option>
+                }
+            }
+        </select>
+
+        <select id="event-type">
+            <option value="" selected="selected">Event Type</option>
+            @foreach(var eventType in Model.EventTypes)
+            {
+                <option value="@eventType.Id">@eventType.Name</option>
+            }
+        </select>
+    </div>
+}

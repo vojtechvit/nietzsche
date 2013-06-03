@@ -1,0 +1,17 @@
+﻿@model NietzscheBiography.WebSite.ViewModels.Home.Index
+@{
+    ViewBag.Title = null;
+    ViewBag.Description = null;
+}
+<header class="hero-unit">
+    <img class="pull-right hidden-phone img-polaroid" src="@Href("~/content/images/nietzsche.jpg")" alt="Nietzsche" />
+    <h1>Friedrich Nietzsche<br />
+        <small>A digital biography</small></h1>
+    <p>A digital humantities project created and maintained at EPFL.</p>
+</header>
+<div class="row">
+    <div class="span12">
+        <h2>Who was Nietzsche?</h2>
+        <p><a href="@Url.Connection(Model.Nietzsche.Id)" title="More about @Model.Nietzsche.Name">@Model.Nietzsche.Name</a> was a @Model.Nietzsche.Nationality @Model.Nietzsche.Profession.ToLower().</p>
+    </div>
+</div>

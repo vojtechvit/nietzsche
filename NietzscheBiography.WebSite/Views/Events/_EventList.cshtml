@@ -1,0 +1,7 @@
+﻿@model IEnumerable<EventInfo>
+<ol>
+    @foreach(var e in Model)
+    {
+        <li><span class="occurrence">@e.Occurrence</span> &mdash; <span class="title">@Html.Raw(e.Title)</span></li>
+    }
+</ol>

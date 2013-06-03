@@ -1,0 +1,1967 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="NietzscheBiography.Domain.Models.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="NietzscheBiographyDomainModelsStoreContainer">
+          <EntitySet Name="address" EntityType="NietzscheBiography.Domain.Models.Store.address" store:Type="Tables" Schema="nietzschebiography" />
+          <EntitySet Name="alternative_name" EntityType="NietzscheBiography.Domain.Models.Store.alternative_name" store:Type="Tables" Schema="nietzschebiography" />
+          <EntitySet Name="citation" EntityType="NietzscheBiography.Domain.Models.Store.citation" store:Type="Tables" Schema="nietzschebiography" />
+          <EntitySet Name="country" EntityType="NietzscheBiography.Domain.Models.Store.country" store:Type="Tables" Schema="nietzschebiography" />
+          <EntitySet Name="event" EntityType="NietzscheBiography.Domain.Models.Store.event" store:Type="Tables" Schema="nietzschebiography" />
+          <EntitySet Name="event_category" EntityType="NietzscheBiography.Domain.Models.Store.event_category" store:Type="Tables" Schema="nietzschebiography" />
+          <EntitySet Name="event_citation" EntityType="NietzscheBiography.Domain.Models.Store.event_citation" store:Type="Tables" Schema="nietzschebiography" />
+          <EntitySet Name="event_location" EntityType="NietzscheBiography.Domain.Models.Store.event_location" store:Type="Tables" Schema="nietzschebiography" />
+          <EntitySet Name="event_object" EntityType="NietzscheBiography.Domain.Models.Store.event_object" store:Type="Tables" Schema="nietzschebiography" />
+          <EntitySet Name="event_participant" EntityType="NietzscheBiography.Domain.Models.Store.event_participant" store:Type="Tables" Schema="nietzschebiography" />
+          <EntitySet Name="event_title_cache" EntityType="NietzscheBiography.Domain.Models.Store.event_title_cache" store:Type="Tables" Schema="nietzschebiography" />
+          <EntitySet Name="event_type" EntityType="NietzscheBiography.Domain.Models.Store.event_type" store:Type="Tables" Schema="nietzschebiography" />
+          <EntitySet Name="individual" EntityType="NietzscheBiography.Domain.Models.Store.individual" store:Type="Tables" Schema="nietzschebiography" />
+          <EntitySet Name="interval" EntityType="NietzscheBiography.Domain.Models.Store.interval" store:Type="Tables" Schema="nietzschebiography" />
+          <EntitySet Name="interval_citation" EntityType="NietzscheBiography.Domain.Models.Store.interval_citation" store:Type="Tables" Schema="nietzschebiography" />
+          <EntitySet Name="location" EntityType="NietzscheBiography.Domain.Models.Store.location" store:Type="Tables" Schema="nietzschebiography" />
+          <EntitySet Name="media_item" EntityType="NietzscheBiography.Domain.Models.Store.media_item" store:Type="Tables" Schema="nietzschebiography" />
+          <EntitySet Name="media_item_type" EntityType="NietzscheBiography.Domain.Models.Store.media_item_type" store:Type="Tables" Schema="nietzschebiography" />
+          <EntitySet Name="organization" EntityType="NietzscheBiography.Domain.Models.Store.organization" store:Type="Tables" Schema="nietzschebiography" />
+          <EntitySet Name="organization_type" EntityType="NietzscheBiography.Domain.Models.Store.organization_type" store:Type="Tables" Schema="nietzschebiography" />
+          <EntitySet Name="participant" EntityType="NietzscheBiography.Domain.Models.Store.participant" store:Type="Tables" Schema="nietzschebiography" />
+          <EntitySet Name="populated_place" EntityType="NietzscheBiography.Domain.Models.Store.populated_place" store:Type="Tables" Schema="nietzschebiography" />
+          <EntitySet Name="relationship" EntityType="NietzscheBiography.Domain.Models.Store.relationship" store:Type="Tables" Schema="nietzschebiography" />
+          <EntitySet Name="relationship_category" EntityType="NietzscheBiography.Domain.Models.Store.relationship_category" store:Type="Tables" Schema="nietzschebiography" />
+          <EntitySet Name="relationship_interval" EntityType="NietzscheBiography.Domain.Models.Store.relationship_interval" store:Type="Tables" Schema="nietzschebiography" />
+          <EntitySet Name="relationship_type" EntityType="NietzscheBiography.Domain.Models.Store.relationship_type" store:Type="Tables" Schema="nietzschebiography" />
+          <EntitySet Name="thematic_role" EntityType="NietzscheBiography.Domain.Models.Store.thematic_role" store:Type="Tables" Schema="nietzschebiography" />
+          <AssociationSet Name="address$fk_address_location" Association="NietzscheBiography.Domain.Models.Store.address$fk_address_location">
+            <End Role="location" EntitySet="location" />
+            <End Role="address" EntitySet="address" />
+          </AssociationSet>
+          <AssociationSet Name="address$fk_address_populated_place" Association="NietzscheBiography.Domain.Models.Store.address$fk_address_populated_place">
+            <End Role="populated_place" EntitySet="populated_place" />
+            <End Role="address" EntitySet="address" />
+          </AssociationSet>
+          <AssociationSet Name="alternative_name$fk_alternative_name_participant" Association="NietzscheBiography.Domain.Models.Store.alternative_name$fk_alternative_name_participant">
+            <End Role="participant" EntitySet="participant" />
+            <End Role="alternative_name" EntitySet="alternative_name" />
+          </AssociationSet>
+          <AssociationSet Name="citation$fk_citation_media_item" Association="NietzscheBiography.Domain.Models.Store.citation$fk_citation_media_item">
+            <End Role="media_item" EntitySet="media_item" />
+            <End Role="citation" EntitySet="citation" />
+          </AssociationSet>
+          <AssociationSet Name="country$fk_country_location" Association="NietzscheBiography.Domain.Models.Store.country$fk_country_location">
+            <End Role="location" EntitySet="location" />
+            <End Role="country" EntitySet="country" />
+          </AssociationSet>
+          <AssociationSet Name="event$fk_event_classification" Association="NietzscheBiography.Domain.Models.Store.event$fk_event_classification">
+            <End Role="event_type" EntitySet="event_type" />
+            <End Role="event" EntitySet="event" />
+          </AssociationSet>
+          <AssociationSet Name="event_citation$fk_event_citation_1" Association="NietzscheBiography.Domain.Models.Store.event_citation$fk_event_citation_1">
+            <End Role="event" EntitySet="event" />
+            <End Role="event_citation" EntitySet="event_citation" />
+          </AssociationSet>
+          <AssociationSet Name="event_citation$fk_event_citation_2" Association="NietzscheBiography.Domain.Models.Store.event_citation$fk_event_citation_2">
+            <End Role="citation" EntitySet="citation" />
+            <End Role="event_citation" EntitySet="event_citation" />
+          </AssociationSet>
+          <AssociationSet Name="event_location$fk_event_location_1" Association="NietzscheBiography.Domain.Models.Store.event_location$fk_event_location_1">
+            <End Role="event" EntitySet="event" />
+            <End Role="event_location" EntitySet="event_location" />
+          </AssociationSet>
+          <AssociationSet Name="event_location$fk_event_location_2" Association="NietzscheBiography.Domain.Models.Store.event_location$fk_event_location_2">
+            <End Role="location" EntitySet="location" />
+            <End Role="event_location" EntitySet="event_location" />
+          </AssociationSet>
+          <AssociationSet Name="event_location$fk_event_location_thematic_role" Association="NietzscheBiography.Domain.Models.Store.event_location$fk_event_location_thematic_role">
+            <End Role="thematic_role" EntitySet="thematic_role" />
+            <End Role="event_location" EntitySet="event_location" />
+          </AssociationSet>
+          <AssociationSet Name="event_object$fk_event_object_1" Association="NietzscheBiography.Domain.Models.Store.event_object$fk_event_object_1">
+            <End Role="event" EntitySet="event" />
+            <End Role="event_object" EntitySet="event_object" />
+          </AssociationSet>
+          <AssociationSet Name="event_object$fk_event_object_2" Association="NietzscheBiography.Domain.Models.Store.event_object$fk_event_object_2">
+            <End Role="media_item" EntitySet="media_item" />
+            <End Role="event_object" EntitySet="event_object" />
+          </AssociationSet>
+          <AssociationSet Name="event_participant$fk_event_participant_1" Association="NietzscheBiography.Domain.Models.Store.event_participant$fk_event_participant_1">
+            <End Role="event" EntitySet="event" />
+            <End Role="event_participant" EntitySet="event_participant" />
+          </AssociationSet>
+          <AssociationSet Name="event_participant$fk_event_participant_2" Association="NietzscheBiography.Domain.Models.Store.event_participant$fk_event_participant_2">
+            <End Role="participant" EntitySet="participant" />
+            <End Role="event_participant" EntitySet="event_participant" />
+          </AssociationSet>
+          <AssociationSet Name="event_participant$fk_event_participant_thematic_role" Association="NietzscheBiography.Domain.Models.Store.event_participant$fk_event_participant_thematic_role">
+            <End Role="thematic_role" EntitySet="thematic_role" />
+            <End Role="event_participant" EntitySet="event_participant" />
+          </AssociationSet>
+          <AssociationSet Name="event_type$fk_event_type_categorization" Association="NietzscheBiography.Domain.Models.Store.event_type$fk_event_type_categorization">
+            <End Role="event_category" EntitySet="event_category" />
+            <End Role="event_type" EntitySet="event_type" />
+          </AssociationSet>
+          <AssociationSet Name="FK_event_title_cache_event" Association="NietzscheBiography.Domain.Models.Store.FK_event_title_cache_event">
+            <End Role="event" EntitySet="event" />
+            <End Role="event_title_cache" EntitySet="event_title_cache" />
+          </AssociationSet>
+          <AssociationSet Name="individual$fk_individual_nationality" Association="NietzscheBiography.Domain.Models.Store.individual$fk_individual_nationality">
+            <End Role="country" EntitySet="country" />
+            <End Role="individual" EntitySet="individual" />
+          </AssociationSet>
+          <AssociationSet Name="individual$fk_individual_participant" Association="NietzscheBiography.Domain.Models.Store.individual$fk_individual_participant">
+            <End Role="participant" EntitySet="participant" />
+            <End Role="individual" EntitySet="individual" />
+          </AssociationSet>
+          <AssociationSet Name="interval$fk_concluding_event" Association="NietzscheBiography.Domain.Models.Store.interval$fk_concluding_event">
+            <End Role="event" EntitySet="event" />
+            <End Role="interval" EntitySet="interval" />
+          </AssociationSet>
+          <AssociationSet Name="interval$fk_initiating_event" Association="NietzscheBiography.Domain.Models.Store.interval$fk_initiating_event">
+            <End Role="event" EntitySet="event" />
+            <End Role="interval" EntitySet="interval" />
+          </AssociationSet>
+          <AssociationSet Name="interval_citation$fk_interval_citation_1" Association="NietzscheBiography.Domain.Models.Store.interval_citation$fk_interval_citation_1">
+            <End Role="interval" EntitySet="interval" />
+            <End Role="interval_citation" EntitySet="interval_citation" />
+          </AssociationSet>
+          <AssociationSet Name="interval_citation$fk_interval_citation_2" Association="NietzscheBiography.Domain.Models.Store.interval_citation$fk_interval_citation_2">
+            <End Role="citation" EntitySet="citation" />
+            <End Role="interval_citation" EntitySet="interval_citation" />
+          </AssociationSet>
+          <AssociationSet Name="media_item$fk_edition_of_media_item" Association="NietzscheBiography.Domain.Models.Store.media_item$fk_edition_of_media_item">
+            <End Role="media_item" EntitySet="media_item" />
+            <End Role="media_item1" EntitySet="media_item" />
+          </AssociationSet>
+          <AssociationSet Name="media_item$fk_media_item_classification" Association="NietzscheBiography.Domain.Models.Store.media_item$fk_media_item_classification">
+            <End Role="media_item_type" EntitySet="media_item_type" />
+            <End Role="media_item" EntitySet="media_item" />
+          </AssociationSet>
+          <AssociationSet Name="media_item$fk_part_of_media_item" Association="NietzscheBiography.Domain.Models.Store.media_item$fk_part_of_media_item">
+            <End Role="media_item" EntitySet="media_item" />
+            <End Role="media_item1" EntitySet="media_item" />
+          </AssociationSet>
+          <AssociationSet Name="organization$fk_organization_classification" Association="NietzscheBiography.Domain.Models.Store.organization$fk_organization_classification">
+            <End Role="organization_type" EntitySet="organization_type" />
+            <End Role="organization" EntitySet="organization" />
+          </AssociationSet>
+          <AssociationSet Name="organization$fk_organization_establishment" Association="NietzscheBiography.Domain.Models.Store.organization$fk_organization_establishment">
+            <End Role="location" EntitySet="location" />
+            <End Role="organization" EntitySet="organization" />
+          </AssociationSet>
+          <AssociationSet Name="organization$fk_organization_participant" Association="NietzscheBiography.Domain.Models.Store.organization$fk_organization_participant">
+            <End Role="participant" EntitySet="participant" />
+            <End Role="organization" EntitySet="organization" />
+          </AssociationSet>
+          <AssociationSet Name="populated_place$fk_populated_place_country" Association="NietzscheBiography.Domain.Models.Store.populated_place$fk_populated_place_country">
+            <End Role="country" EntitySet="country" />
+            <End Role="populated_place" EntitySet="populated_place" />
+          </AssociationSet>
+          <AssociationSet Name="populated_place$fk_populated_place_location" Association="NietzscheBiography.Domain.Models.Store.populated_place$fk_populated_place_location">
+            <End Role="location" EntitySet="location" />
+            <End Role="populated_place" EntitySet="populated_place" />
+          </AssociationSet>
+          <AssociationSet Name="relationship$fk_determinant_participant" Association="NietzscheBiography.Domain.Models.Store.relationship$fk_determinant_participant">
+            <End Role="participant" EntitySet="participant" />
+            <End Role="relationship" EntitySet="relationship" />
+          </AssociationSet>
+          <AssociationSet Name="relationship$fk_immanent_participant" Association="NietzscheBiography.Domain.Models.Store.relationship$fk_immanent_participant">
+            <End Role="participant" EntitySet="participant" />
+            <End Role="relationship" EntitySet="relationship" />
+          </AssociationSet>
+          <AssociationSet Name="relationship$fk_inverse_relationship_classification" Association="NietzscheBiography.Domain.Models.Store.relationship$fk_inverse_relationship_classification">
+            <End Role="relationship_type" EntitySet="relationship_type" />
+            <End Role="relationship" EntitySet="relationship" />
+          </AssociationSet>
+          <AssociationSet Name="relationship$fk_relationship_classification" Association="NietzscheBiography.Domain.Models.Store.relationship$fk_relationship_classification">
+            <End Role="relationship_type" EntitySet="relationship_type" />
+            <End Role="relationship" EntitySet="relationship" />
+          </AssociationSet>
+          <AssociationSet Name="relationship_interval$fk_relationship_interval_1" Association="NietzscheBiography.Domain.Models.Store.relationship_interval$fk_relationship_interval_1">
+            <End Role="relationship" EntitySet="relationship" />
+            <End Role="relationship_interval" EntitySet="relationship_interval" />
+          </AssociationSet>
+          <AssociationSet Name="relationship_interval$fk_relationship_interval_2" Association="NietzscheBiography.Domain.Models.Store.relationship_interval$fk_relationship_interval_2">
+            <End Role="interval" EntitySet="interval" />
+            <End Role="relationship_interval" EntitySet="relationship_interval" />
+          </AssociationSet>
+          <AssociationSet Name="relationship_type$fk_relationship_type_categorization" Association="NietzscheBiography.Domain.Models.Store.relationship_type$fk_relationship_type_categorization">
+            <End Role="relationship_category" EntitySet="relationship_category" />
+            <End Role="relationship_type" EntitySet="relationship_type" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="address">
+          <Key>
+            <PropertyRef Name="location_id" />
+          </Key>
+          <Property Name="location_id" Type="bigint" Nullable="false" />
+          <Property Name="populated_place_id" Type="bigint" Nullable="false" />
+          <Property Name="postal_code" Type="nvarchar" MaxLength="10" />
+          <Property Name="street_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="building_number" Type="nvarchar" MaxLength="10" />
+          <Property Name="entrance" Type="nvarchar" MaxLength="10" />
+          <Property Name="floor" Type="smallint" />
+          <Property Name="apartment_number" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="alternative_name">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="participant_id" Type="bigint" Nullable="false" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="citation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="media_item_id" Type="bigint" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="100" />
+          <Property Name="text" Type="nvarchar(max)" />
+          <Property Name="standalone" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="country">
+          <Key>
+            <PropertyRef Name="location_id" />
+          </Key>
+          <Property Name="location_id" Type="bigint" Nullable="false" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="fips104_code" Type="nchar" MaxLength="2" />
+          <Property Name="iso2_code" Type="nchar" MaxLength="2" />
+          <Property Name="iso3_code" Type="nchar" MaxLength="3" />
+          <Property Name="ison_code" Type="smallint" />
+          <Property Name="iana_code" Type="nchar" MaxLength="2" />
+          <Property Name="nationality_singular" Type="nvarchar" MaxLength="50" />
+          <Property Name="nationality_plural" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="event">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="event_type_id" Type="int" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="250" />
+          <Property Name="start_date" Type="date" />
+          <Property Name="end_date" Type="date" />
+          <Property Name="start_date_precision" Type="tinyint" />
+          <Property Name="end_date_precision" Type="tinyint" />
+          <Property Name="importance" Type="int" />
+        </EntityType>
+        <EntityType Name="event_category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="label" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="event_citation">
+          <Key>
+            <PropertyRef Name="event_id" />
+            <PropertyRef Name="citation_id" />
+          </Key>
+          <Property Name="event_id" Type="bigint" Nullable="false" />
+          <Property Name="citation_id" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="event_location">
+          <Key>
+            <PropertyRef Name="event_id" />
+            <PropertyRef Name="location_id" />
+          </Key>
+          <Property Name="event_id" Type="bigint" Nullable="false" />
+          <Property Name="location_id" Type="bigint" Nullable="false" />
+          <Property Name="thematic_role_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="event_object">
+          <Key>
+            <PropertyRef Name="event_id" />
+            <PropertyRef Name="media_item_id" />
+          </Key>
+          <Property Name="event_id" Type="bigint" Nullable="false" />
+          <Property Name="media_item_id" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="event_participant">
+          <Key>
+            <PropertyRef Name="event_id" />
+            <PropertyRef Name="participant_id" />
+            <PropertyRef Name="thematic_role_id" />
+          </Key>
+          <Property Name="event_id" Type="bigint" Nullable="false" />
+          <Property Name="participant_id" Type="bigint" Nullable="false" />
+          <Property Name="thematic_role_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="event_title_cache">
+          <Key>
+            <PropertyRef Name="event_id" />
+          </Key>
+          <Property Name="event_id" Type="bigint" Nullable="false" />
+          <Property Name="title" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="event_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="event_category_id" Type="int" />
+          <Property Name="label" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="individual">
+          <Key>
+            <PropertyRef Name="participant_id" />
+          </Key>
+          <Property Name="participant_id" Type="bigint" Nullable="false" />
+          <Property Name="location_id" Type="bigint" />
+          <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="last_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="given_names" Type="nvarchar" MaxLength="100" />
+          <Property Name="name_prefix" Type="nvarchar" MaxLength="20" />
+          <Property Name="name_suffix" Type="nvarchar" MaxLength="20" />
+          <Property Name="gender" Type="tinyint" />
+          <Property Name="profession" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="interval">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="initiating_event_id" Type="bigint" Nullable="false" />
+          <Property Name="concluding_event_id" Type="bigint" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="interval_citation">
+          <Key>
+            <PropertyRef Name="interval_id" />
+            <PropertyRef Name="citation_id" />
+          </Key>
+          <Property Name="interval_id" Type="bigint" Nullable="false" />
+          <Property Name="citation_id" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="location">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="geo_location" Type="geography" />
+          <Property Name="type" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="media_item">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="original_media_item_id" Type="bigint" />
+          <Property Name="composite_media_item_id" Type="bigint" />
+          <Property Name="media_item_type_id" Type="int" />
+          <Property Name="title" Type="nvarchar" MaxLength="200" />
+          <Property Name="original_title" Type="nvarchar" MaxLength="200" />
+          <Property Name="url" Type="nvarchar" MaxLength="250" />
+          <Property Name="isbn" Type="nvarchar" MaxLength="24" />
+          <Property Name="comment" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="media_item_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="label" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="organization">
+          <Key>
+            <PropertyRef Name="participant_id" />
+          </Key>
+          <Property Name="participant_id" Type="bigint" Nullable="false" />
+          <Property Name="location_id" Type="bigint" />
+          <Property Name="organization_type_id" Type="int" Nullable="false" />
+          <Property Name="description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="organization_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="label" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="participant">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="type" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="populated_place">
+          <Key>
+            <PropertyRef Name="location_id" />
+          </Key>
+          <Property Name="location_id" Type="bigint" Nullable="false" />
+          <Property Name="country_id" Type="bigint" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="time_zone" Type="nchar" MaxLength="6" />
+        </EntityType>
+        <EntityType Name="relationship">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="determinant_participant_id" Type="bigint" Nullable="false" />
+          <Property Name="immanent_participant_id" Type="bigint" Nullable="false" />
+          <Property Name="relationship_type_id" Type="int" Nullable="false" />
+          <Property Name="inverse_relationship_type_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="relationship_category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="label" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="relationship_interval">
+          <Key>
+            <PropertyRef Name="relationship_id" />
+            <PropertyRef Name="interval_id" />
+          </Key>
+          <Property Name="relationship_id" Type="bigint" Nullable="false" />
+          <Property Name="interval_id" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="relationship_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="relationship_category_id" Type="int" />
+          <Property Name="label" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="thematic_role">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Association Name="address$fk_address_location">
+          <End Role="location" Type="NietzscheBiography.Domain.Models.Store.location" Multiplicity="1" />
+          <End Role="address" Type="NietzscheBiography.Domain.Models.Store.address" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="location">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="address">
+              <PropertyRef Name="location_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="address$fk_address_populated_place">
+          <End Role="populated_place" Type="NietzscheBiography.Domain.Models.Store.populated_place" Multiplicity="1" />
+          <End Role="address" Type="NietzscheBiography.Domain.Models.Store.address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="populated_place">
+              <PropertyRef Name="location_id" />
+            </Principal>
+            <Dependent Role="address">
+              <PropertyRef Name="populated_place_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="alternative_name$fk_alternative_name_participant">
+          <End Role="participant" Type="NietzscheBiography.Domain.Models.Store.participant" Multiplicity="1" />
+          <End Role="alternative_name" Type="NietzscheBiography.Domain.Models.Store.alternative_name" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="participant">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="alternative_name">
+              <PropertyRef Name="participant_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="citation$fk_citation_media_item">
+          <End Role="media_item" Type="NietzscheBiography.Domain.Models.Store.media_item" Multiplicity="1" />
+          <End Role="citation" Type="NietzscheBiography.Domain.Models.Store.citation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="media_item">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="citation">
+              <PropertyRef Name="media_item_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="country$fk_country_location">
+          <End Role="location" Type="NietzscheBiography.Domain.Models.Store.location" Multiplicity="1" />
+          <End Role="country" Type="NietzscheBiography.Domain.Models.Store.country" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="location">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="country">
+              <PropertyRef Name="location_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="event$fk_event_classification">
+          <End Role="event_type" Type="NietzscheBiography.Domain.Models.Store.event_type" Multiplicity="1" />
+          <End Role="event" Type="NietzscheBiography.Domain.Models.Store.event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="event_type">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="event">
+              <PropertyRef Name="event_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="event_citation$fk_event_citation_1">
+          <End Role="event" Type="NietzscheBiography.Domain.Models.Store.event" Multiplicity="1" />
+          <End Role="event_citation" Type="NietzscheBiography.Domain.Models.Store.event_citation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="event">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="event_citation">
+              <PropertyRef Name="event_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="event_citation$fk_event_citation_2">
+          <End Role="citation" Type="NietzscheBiography.Domain.Models.Store.citation" Multiplicity="1" />
+          <End Role="event_citation" Type="NietzscheBiography.Domain.Models.Store.event_citation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="citation">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="event_citation">
+              <PropertyRef Name="citation_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="event_location$fk_event_location_1">
+          <End Role="event" Type="NietzscheBiography.Domain.Models.Store.event" Multiplicity="1" />
+          <End Role="event_location" Type="NietzscheBiography.Domain.Models.Store.event_location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="event">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="event_location">
+              <PropertyRef Name="event_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="event_location$fk_event_location_2">
+          <End Role="location" Type="NietzscheBiography.Domain.Models.Store.location" Multiplicity="1" />
+          <End Role="event_location" Type="NietzscheBiography.Domain.Models.Store.event_location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="location">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="event_location">
+              <PropertyRef Name="location_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="event_location$fk_event_location_thematic_role">
+          <End Role="thematic_role" Type="NietzscheBiography.Domain.Models.Store.thematic_role" Multiplicity="1" />
+          <End Role="event_location" Type="NietzscheBiography.Domain.Models.Store.event_location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="thematic_role">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="event_location">
+              <PropertyRef Name="thematic_role_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="event_object$fk_event_object_1">
+          <End Role="event" Type="NietzscheBiography.Domain.Models.Store.event" Multiplicity="1" />
+          <End Role="event_object" Type="NietzscheBiography.Domain.Models.Store.event_object" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="event">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="event_object">
+              <PropertyRef Name="event_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="event_object$fk_event_object_2">
+          <End Role="media_item" Type="NietzscheBiography.Domain.Models.Store.media_item" Multiplicity="1" />
+          <End Role="event_object" Type="NietzscheBiography.Domain.Models.Store.event_object" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="media_item">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="event_object">
+              <PropertyRef Name="media_item_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="event_participant$fk_event_participant_1">
+          <End Role="event" Type="NietzscheBiography.Domain.Models.Store.event" Multiplicity="1" />
+          <End Role="event_participant" Type="NietzscheBiography.Domain.Models.Store.event_participant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="event">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="event_participant">
+              <PropertyRef Name="event_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="event_participant$fk_event_participant_2">
+          <End Role="participant" Type="NietzscheBiography.Domain.Models.Store.participant" Multiplicity="1" />
+          <End Role="event_participant" Type="NietzscheBiography.Domain.Models.Store.event_participant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="participant">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="event_participant">
+              <PropertyRef Name="participant_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="event_participant$fk_event_participant_thematic_role">
+          <End Role="thematic_role" Type="NietzscheBiography.Domain.Models.Store.thematic_role" Multiplicity="1" />
+          <End Role="event_participant" Type="NietzscheBiography.Domain.Models.Store.event_participant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="thematic_role">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="event_participant">
+              <PropertyRef Name="thematic_role_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="event_type$fk_event_type_categorization">
+          <End Role="event_category" Type="NietzscheBiography.Domain.Models.Store.event_category" Multiplicity="0..1" />
+          <End Role="event_type" Type="NietzscheBiography.Domain.Models.Store.event_type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="event_category">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="event_type">
+              <PropertyRef Name="event_category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_event_title_cache_event">
+          <End Role="event" Type="NietzscheBiography.Domain.Models.Store.event" Multiplicity="1" />
+          <End Role="event_title_cache" Type="NietzscheBiography.Domain.Models.Store.event_title_cache" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="event">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="event_title_cache">
+              <PropertyRef Name="event_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="individual$fk_individual_nationality">
+          <End Role="country" Type="NietzscheBiography.Domain.Models.Store.country" Multiplicity="0..1" />
+          <End Role="individual" Type="NietzscheBiography.Domain.Models.Store.individual" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="country">
+              <PropertyRef Name="location_id" />
+            </Principal>
+            <Dependent Role="individual">
+              <PropertyRef Name="location_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="individual$fk_individual_participant">
+          <End Role="participant" Type="NietzscheBiography.Domain.Models.Store.participant" Multiplicity="1" />
+          <End Role="individual" Type="NietzscheBiography.Domain.Models.Store.individual" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="participant">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="individual">
+              <PropertyRef Name="participant_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="interval$fk_concluding_event">
+          <End Role="event" Type="NietzscheBiography.Domain.Models.Store.event" Multiplicity="1" />
+          <End Role="interval" Type="NietzscheBiography.Domain.Models.Store.interval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="event">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="interval">
+              <PropertyRef Name="initiating_event_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="interval$fk_initiating_event">
+          <End Role="event" Type="NietzscheBiography.Domain.Models.Store.event" Multiplicity="1" />
+          <End Role="interval" Type="NietzscheBiography.Domain.Models.Store.interval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="event">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="interval">
+              <PropertyRef Name="concluding_event_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="interval_citation$fk_interval_citation_1">
+          <End Role="interval" Type="NietzscheBiography.Domain.Models.Store.interval" Multiplicity="1" />
+          <End Role="interval_citation" Type="NietzscheBiography.Domain.Models.Store.interval_citation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="interval">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="interval_citation">
+              <PropertyRef Name="interval_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="interval_citation$fk_interval_citation_2">
+          <End Role="citation" Type="NietzscheBiography.Domain.Models.Store.citation" Multiplicity="1" />
+          <End Role="interval_citation" Type="NietzscheBiography.Domain.Models.Store.interval_citation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="citation">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="interval_citation">
+              <PropertyRef Name="citation_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="media_item$fk_edition_of_media_item">
+          <End Role="media_item" Type="NietzscheBiography.Domain.Models.Store.media_item" Multiplicity="0..1" />
+          <End Role="media_item1" Type="NietzscheBiography.Domain.Models.Store.media_item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="media_item">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="media_item1">
+              <PropertyRef Name="composite_media_item_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="media_item$fk_media_item_classification">
+          <End Role="media_item_type" Type="NietzscheBiography.Domain.Models.Store.media_item_type" Multiplicity="0..1" />
+          <End Role="media_item" Type="NietzscheBiography.Domain.Models.Store.media_item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="media_item_type">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="media_item">
+              <PropertyRef Name="media_item_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="media_item$fk_part_of_media_item">
+          <End Role="media_item" Type="NietzscheBiography.Domain.Models.Store.media_item" Multiplicity="0..1" />
+          <End Role="media_item1" Type="NietzscheBiography.Domain.Models.Store.media_item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="media_item">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="media_item1">
+              <PropertyRef Name="original_media_item_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="organization$fk_organization_classification">
+          <End Role="organization_type" Type="NietzscheBiography.Domain.Models.Store.organization_type" Multiplicity="1" />
+          <End Role="organization" Type="NietzscheBiography.Domain.Models.Store.organization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="organization_type">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="organization">
+              <PropertyRef Name="organization_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="organization$fk_organization_establishment">
+          <End Role="location" Type="NietzscheBiography.Domain.Models.Store.location" Multiplicity="0..1" />
+          <End Role="organization" Type="NietzscheBiography.Domain.Models.Store.organization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="location">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="organization">
+              <PropertyRef Name="location_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="organization$fk_organization_participant">
+          <End Role="participant" Type="NietzscheBiography.Domain.Models.Store.participant" Multiplicity="1" />
+          <End Role="organization" Type="NietzscheBiography.Domain.Models.Store.organization" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="participant">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="organization">
+              <PropertyRef Name="participant_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="populated_place$fk_populated_place_country">
+          <End Role="country" Type="NietzscheBiography.Domain.Models.Store.country" Multiplicity="0..1" />
+          <End Role="populated_place" Type="NietzscheBiography.Domain.Models.Store.populated_place" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="country">
+              <PropertyRef Name="location_id" />
+            </Principal>
+            <Dependent Role="populated_place">
+              <PropertyRef Name="country_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="populated_place$fk_populated_place_location">
+          <End Role="location" Type="NietzscheBiography.Domain.Models.Store.location" Multiplicity="1" />
+          <End Role="populated_place" Type="NietzscheBiography.Domain.Models.Store.populated_place" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="location">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="populated_place">
+              <PropertyRef Name="location_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="relationship$fk_determinant_participant">
+          <End Role="participant" Type="NietzscheBiography.Domain.Models.Store.participant" Multiplicity="1" />
+          <End Role="relationship" Type="NietzscheBiography.Domain.Models.Store.relationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="participant">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="relationship">
+              <PropertyRef Name="immanent_participant_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="relationship$fk_immanent_participant">
+          <End Role="participant" Type="NietzscheBiography.Domain.Models.Store.participant" Multiplicity="1" />
+          <End Role="relationship" Type="NietzscheBiography.Domain.Models.Store.relationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="participant">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="relationship">
+              <PropertyRef Name="determinant_participant_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="relationship$fk_inverse_relationship_classification">
+          <End Role="relationship_type" Type="NietzscheBiography.Domain.Models.Store.relationship_type" Multiplicity="1" />
+          <End Role="relationship" Type="NietzscheBiography.Domain.Models.Store.relationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="relationship_type">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="relationship">
+              <PropertyRef Name="inverse_relationship_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="relationship$fk_relationship_classification">
+          <End Role="relationship_type" Type="NietzscheBiography.Domain.Models.Store.relationship_type" Multiplicity="1" />
+          <End Role="relationship" Type="NietzscheBiography.Domain.Models.Store.relationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="relationship_type">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="relationship">
+              <PropertyRef Name="relationship_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="relationship_interval$fk_relationship_interval_1">
+          <End Role="relationship" Type="NietzscheBiography.Domain.Models.Store.relationship" Multiplicity="1" />
+          <End Role="relationship_interval" Type="NietzscheBiography.Domain.Models.Store.relationship_interval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="relationship">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="relationship_interval">
+              <PropertyRef Name="relationship_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="relationship_interval$fk_relationship_interval_2">
+          <End Role="interval" Type="NietzscheBiography.Domain.Models.Store.interval" Multiplicity="1" />
+          <End Role="relationship_interval" Type="NietzscheBiography.Domain.Models.Store.relationship_interval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="interval">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="relationship_interval">
+              <PropertyRef Name="interval_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="relationship_type$fk_relationship_type_categorization">
+          <End Role="relationship_category" Type="NietzscheBiography.Domain.Models.Store.relationship_category" Multiplicity="0..1" />
+          <End Role="relationship_type" Type="NietzscheBiography.Domain.Models.Store.relationship_type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="relationship_category">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="relationship_type">
+              <PropertyRef Name="relationship_category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NietzscheBiography.Domain.Models" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="NietzscheBiographyDbContext" p1:LazyLoadingEnabled="false">
+          <EntitySet Name="AlternativeNames" EntityType="NietzscheBiography.Domain.Models.AlternativeName" />
+          <EntitySet Name="Citations" EntityType="NietzscheBiography.Domain.Models.Citation" />
+          <EntitySet Name="Events" EntityType="NietzscheBiography.Domain.Models.Event" />
+          <EntitySet Name="EventCategories" EntityType="NietzscheBiography.Domain.Models.EventCategory" />
+          <EntitySet Name="LocationEventInvolvements" EntityType="NietzscheBiography.Domain.Models.LocationEventInvolvement" />
+          <EntitySet Name="ParticipantEventInvolvements" EntityType="NietzscheBiography.Domain.Models.ParticipantEventInvolvement" />
+          <EntitySet Name="EventTypes" EntityType="NietzscheBiography.Domain.Models.EventType" />
+          <EntitySet Name="Intervals" EntityType="NietzscheBiography.Domain.Models.Interval" />
+          <EntitySet Name="Locations" EntityType="NietzscheBiography.Domain.Models.Location" />
+          <EntitySet Name="MediaItems" EntityType="NietzscheBiography.Domain.Models.MediaItem" />
+          <EntitySet Name="MediaItemTypes" EntityType="NietzscheBiography.Domain.Models.MediaItemType" />
+          <EntitySet Name="OrganizationTypes" EntityType="NietzscheBiography.Domain.Models.OrganizationType" />
+          <EntitySet Name="Participants" EntityType="NietzscheBiography.Domain.Models.Participant" />
+          <EntitySet Name="Relationships" EntityType="NietzscheBiography.Domain.Models.Relationship" />
+          <EntitySet Name="RelationshipCategories" EntityType="NietzscheBiography.Domain.Models.RelationshipCategory" />
+          <EntitySet Name="RelationshipTypes" EntityType="NietzscheBiography.Domain.Models.RelationshipType" />
+          <EntitySet Name="ThematicRoles" EntityType="NietzscheBiography.Domain.Models.ThematicRole" />
+          <AssociationSet Name="address_fk_address_populated_place" Association="NietzscheBiography.Domain.Models.address_fk_address_populated_place">
+            <End Role="populated_place" EntitySet="Locations" />
+            <End Role="address" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="alternative_name_fk_alternative_name_participant" Association="NietzscheBiography.Domain.Models.alternative_name_fk_alternative_name_participant">
+            <End Role="participant" EntitySet="Participants" />
+            <End Role="alternative_name" EntitySet="AlternativeNames" />
+          </AssociationSet>
+          <AssociationSet Name="citation_fk_citation_media_item" Association="NietzscheBiography.Domain.Models.citation_fk_citation_media_item">
+            <End Role="media_item" EntitySet="MediaItems" />
+            <End Role="citation" EntitySet="Citations" />
+          </AssociationSet>
+          <AssociationSet Name="individual_fk_individual_nationality" Association="NietzscheBiography.Domain.Models.individual_fk_individual_nationality">
+            <End Role="country" EntitySet="Locations" />
+            <End Role="individual" EntitySet="Participants" />
+          </AssociationSet>
+          <AssociationSet Name="populated_place_fk_populated_place_country" Association="NietzscheBiography.Domain.Models.populated_place_fk_populated_place_country">
+            <End Role="country" EntitySet="Locations" />
+            <End Role="populated_place" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="event_fk_event_classification" Association="NietzscheBiography.Domain.Models.event_fk_event_classification">
+            <End Role="event_type" EntitySet="EventTypes" />
+            <End Role="event" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="event_location_fk_event_location_1" Association="NietzscheBiography.Domain.Models.event_location_fk_event_location_1">
+            <End Role="event" EntitySet="Events" />
+            <End Role="event_location" EntitySet="LocationEventInvolvements" />
+          </AssociationSet>
+          <AssociationSet Name="event_participant_fk_event_participant_1" Association="NietzscheBiography.Domain.Models.event_participant_fk_event_participant_1">
+            <End Role="event" EntitySet="Events" />
+            <End Role="event_participant" EntitySet="ParticipantEventInvolvements" />
+          </AssociationSet>
+          <AssociationSet Name="interval_fk_concluding_event" Association="NietzscheBiography.Domain.Models.interval_fk_concluding_event">
+            <End Role="event" EntitySet="Events" />
+            <End Role="interval" EntitySet="Intervals" />
+          </AssociationSet>
+          <AssociationSet Name="interval_fk_initiating_event" Association="NietzscheBiography.Domain.Models.interval_fk_initiating_event">
+            <End Role="event" EntitySet="Events" />
+            <End Role="interval" EntitySet="Intervals" />
+          </AssociationSet>
+          <AssociationSet Name="event_type_fk_event_type_categorization" Association="NietzscheBiography.Domain.Models.event_type_fk_event_type_categorization">
+            <End Role="event_category" EntitySet="EventCategories" />
+            <End Role="event_type" EntitySet="EventTypes" />
+          </AssociationSet>
+          <AssociationSet Name="event_location_fk_event_location_2" Association="NietzscheBiography.Domain.Models.event_location_fk_event_location_2">
+            <End Role="location" EntitySet="Locations" />
+            <End Role="event_location" EntitySet="LocationEventInvolvements" />
+          </AssociationSet>
+          <AssociationSet Name="event_location_fk_event_location_thematic_role" Association="NietzscheBiography.Domain.Models.event_location_fk_event_location_thematic_role">
+            <End Role="thematic_role" EntitySet="ThematicRoles" />
+            <End Role="event_location" EntitySet="LocationEventInvolvements" />
+          </AssociationSet>
+          <AssociationSet Name="event_participant_fk_event_participant_2" Association="NietzscheBiography.Domain.Models.event_participant_fk_event_participant_2">
+            <End Role="participant" EntitySet="Participants" />
+            <End Role="event_participant" EntitySet="ParticipantEventInvolvements" />
+          </AssociationSet>
+          <AssociationSet Name="event_participant_fk_event_participant_thematic_role" Association="NietzscheBiography.Domain.Models.event_participant_fk_event_participant_thematic_role">
+            <End Role="thematic_role" EntitySet="ThematicRoles" />
+            <End Role="event_participant" EntitySet="ParticipantEventInvolvements" />
+          </AssociationSet>
+          <AssociationSet Name="organization_fk_organization_establishment" Association="NietzscheBiography.Domain.Models.organization_fk_organization_establishment">
+            <End Role="location" EntitySet="Locations" />
+            <End Role="organization" EntitySet="Participants" />
+          </AssociationSet>
+          <AssociationSet Name="media_item_fk_edition_of_media_item" Association="NietzscheBiography.Domain.Models.media_item_fk_edition_of_media_item">
+            <End Role="media_item" EntitySet="MediaItems" />
+            <End Role="media_item1" EntitySet="MediaItems" />
+          </AssociationSet>
+          <AssociationSet Name="media_item_fk_media_item_classification" Association="NietzscheBiography.Domain.Models.media_item_fk_media_item_classification">
+            <End Role="media_item_type" EntitySet="MediaItemTypes" />
+            <End Role="media_item" EntitySet="MediaItems" />
+          </AssociationSet>
+          <AssociationSet Name="media_item_fk_part_of_media_item" Association="NietzscheBiography.Domain.Models.media_item_fk_part_of_media_item">
+            <End Role="media_item" EntitySet="MediaItems" />
+            <End Role="media_item1" EntitySet="MediaItems" />
+          </AssociationSet>
+          <AssociationSet Name="organization_fk_organization_classification" Association="NietzscheBiography.Domain.Models.organization_fk_organization_classification">
+            <End Role="organization_type" EntitySet="OrganizationTypes" />
+            <End Role="organization" EntitySet="Participants" />
+          </AssociationSet>
+          <AssociationSet Name="relationship_fk_determinant_participant" Association="NietzscheBiography.Domain.Models.relationship_fk_determinant_participant">
+            <End Role="participant" EntitySet="Participants" />
+            <End Role="relationship" EntitySet="Relationships" />
+          </AssociationSet>
+          <AssociationSet Name="relationship_fk_immanent_participant" Association="NietzscheBiography.Domain.Models.relationship_fk_immanent_participant">
+            <End Role="participant" EntitySet="Participants" />
+            <End Role="relationship" EntitySet="Relationships" />
+          </AssociationSet>
+          <AssociationSet Name="relationship_fk_inverse_relationship_classification" Association="NietzscheBiography.Domain.Models.relationship_fk_inverse_relationship_classification">
+            <End Role="relationship_type" EntitySet="RelationshipTypes" />
+            <End Role="relationship" EntitySet="Relationships" />
+          </AssociationSet>
+          <AssociationSet Name="relationship_fk_relationship_classification" Association="NietzscheBiography.Domain.Models.relationship_fk_relationship_classification">
+            <End Role="relationship_type" EntitySet="RelationshipTypes" />
+            <End Role="relationship" EntitySet="Relationships" />
+          </AssociationSet>
+          <AssociationSet Name="relationship_type_fk_relationship_type_categorization" Association="NietzscheBiography.Domain.Models.relationship_type_fk_relationship_type_categorization">
+            <End Role="relationship_category" EntitySet="RelationshipCategories" />
+            <End Role="relationship_type" EntitySet="RelationshipTypes" />
+          </AssociationSet>
+          <AssociationSet Name="event_citation" Association="NietzscheBiography.Domain.Models.event_citation">
+            <End Role="event" EntitySet="Events" />
+            <End Role="citation" EntitySet="Citations" />
+          </AssociationSet>
+          <AssociationSet Name="event_object" Association="NietzscheBiography.Domain.Models.event_object">
+            <End Role="event" EntitySet="Events" />
+            <End Role="media_item" EntitySet="MediaItems" />
+          </AssociationSet>
+          <AssociationSet Name="interval_citation" Association="NietzscheBiography.Domain.Models.interval_citation">
+            <End Role="interval" EntitySet="Intervals" />
+            <End Role="citation" EntitySet="Citations" />
+          </AssociationSet>
+          <AssociationSet Name="relationship_interval" Association="NietzscheBiography.Domain.Models.relationship_interval">
+            <End Role="relationship" EntitySet="Relationships" />
+            <End Role="interval" EntitySet="Intervals" />
+          </AssociationSet>
+          <EntitySet Name="EventTitles" EntityType="NietzscheBiography.Domain.Models.EventTitle" />
+          <AssociationSet Name="FK_event_title_cache_event" Association="NietzscheBiography.Domain.Models.FK_event_title_cache_event">
+            <End Role="Event" EntitySet="Events" />
+            <End Role="event_title_cache" EntitySet="EventTitles" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Address" BaseType="NietzscheBiography.Domain.Models.Location">
+          <Property Name="PopulatedPlaceId" Type="Int64" Nullable="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="StreetName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="BuildingNumber" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Entrance" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Floor" Type="Int16" />
+          <Property Name="ApartmentNumber" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="PopulatedPlace" Relationship="NietzscheBiography.Domain.Models.address_fk_address_populated_place" FromRole="address" ToRole="populated_place" />
+        </EntityType>
+        <EntityType Name="AlternativeName">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ParticipantId" Type="Int64" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Participant" Relationship="NietzscheBiography.Domain.Models.alternative_name_fk_alternative_name_participant" FromRole="alternative_name" ToRole="participant" />
+        </EntityType>
+        <EntityType Name="Citation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="MediaItemId" Type="Int64" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Text" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Standalone" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="Source" Relationship="NietzscheBiography.Domain.Models.citation_fk_citation_media_item" FromRole="citation" ToRole="media_item" />
+          <NavigationProperty Name="RelatedEvents" Relationship="NietzscheBiography.Domain.Models.event_citation" FromRole="citation" ToRole="event" />
+          <NavigationProperty Name="RelatedIntervals" Relationship="NietzscheBiography.Domain.Models.interval_citation" FromRole="citation" ToRole="interval" />
+        </EntityType>
+        <EntityType Name="Country" BaseType="NietzscheBiography.Domain.Models.Location">
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="Fips104" Type="String" MaxLength="2" Unicode="true" FixedLength="true" />
+          <Property Name="Iso2" Type="String" MaxLength="2" Unicode="true" FixedLength="true" />
+          <Property Name="Iso3" Type="String" MaxLength="3" Unicode="true" FixedLength="true" />
+          <Property Name="Ison" Type="Int16" />
+          <Property Name="Iana" Type="String" MaxLength="2" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="Nationals" Relationship="NietzscheBiography.Domain.Models.individual_fk_individual_nationality" FromRole="country" ToRole="individual" />
+          <NavigationProperty Name="PopulatedPlaces" Relationship="NietzscheBiography.Domain.Models.populated_place_fk_populated_place_country" FromRole="country" ToRole="populated_place" />
+          <Property Name="Nationality" Type="NietzscheBiography.Domain.Models.SinPlurText" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeId" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="Importance" Type="Int32" />
+          <NavigationProperty Name="Type" Relationship="NietzscheBiography.Domain.Models.event_fk_event_classification" FromRole="event" ToRole="event_type" />
+          <NavigationProperty Name="LocationInvolvements" Relationship="NietzscheBiography.Domain.Models.event_location_fk_event_location_1" FromRole="event" ToRole="event_location" />
+          <NavigationProperty Name="ParticipantInvolvements" Relationship="NietzscheBiography.Domain.Models.event_participant_fk_event_participant_1" FromRole="event" ToRole="event_participant" />
+          <NavigationProperty Name="ConcludedIntervals" Relationship="NietzscheBiography.Domain.Models.interval_fk_concluding_event" FromRole="event" ToRole="interval" />
+          <NavigationProperty Name="InitializedIntervals" Relationship="NietzscheBiography.Domain.Models.interval_fk_initiating_event" FromRole="event" ToRole="interval" />
+          <NavigationProperty Name="Citations" Relationship="NietzscheBiography.Domain.Models.event_citation" FromRole="event" ToRole="citation" />
+          <NavigationProperty Name="RelatedMediaItems" Relationship="NietzscheBiography.Domain.Models.event_object" FromRole="event" ToRole="media_item" />
+          <Property Name="Occurrence" Type="NietzscheBiography.Domain.Models.EventOccurrence" Nullable="false" />
+          <NavigationProperty Name="Title" Relationship="NietzscheBiography.Domain.Models.FK_event_title_cache_event" FromRole="Event" ToRole="event_title_cache" />
+        </EntityType>
+        <EntityType Name="EventCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Label" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Types" Relationship="NietzscheBiography.Domain.Models.event_type_fk_event_type_categorization" FromRole="event_category" ToRole="event_type" />
+        </EntityType>
+        <EntityType Name="LocationEventInvolvement">
+          <Key>
+            <PropertyRef Name="EventId" />
+            <PropertyRef Name="LocationId" />
+          </Key>
+          <Property Name="EventId" Type="Int64" Nullable="false" />
+          <Property Name="LocationId" Type="Int64" Nullable="false" />
+          <Property Name="ThematicRoleId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Event" Relationship="NietzscheBiography.Domain.Models.event_location_fk_event_location_1" FromRole="event_location" ToRole="event" />
+          <NavigationProperty Name="Location" Relationship="NietzscheBiography.Domain.Models.event_location_fk_event_location_2" FromRole="event_location" ToRole="location" />
+          <NavigationProperty Name="ThematicRole" Relationship="NietzscheBiography.Domain.Models.event_location_fk_event_location_thematic_role" FromRole="event_location" ToRole="thematic_role" />
+        </EntityType>
+        <EntityType Name="ParticipantEventInvolvement">
+          <Key>
+            <PropertyRef Name="EventId" />
+            <PropertyRef Name="ParticipantId" />
+            <PropertyRef Name="ThematicRoleId" />
+          </Key>
+          <Property Name="EventId" Type="Int64" Nullable="false" />
+          <Property Name="ParticipantId" Type="Int64" Nullable="false" />
+          <Property Name="ThematicRoleId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Event" Relationship="NietzscheBiography.Domain.Models.event_participant_fk_event_participant_1" FromRole="event_participant" ToRole="event" />
+          <NavigationProperty Name="Participant" Relationship="NietzscheBiography.Domain.Models.event_participant_fk_event_participant_2" FromRole="event_participant" ToRole="participant" />
+          <NavigationProperty Name="ThematicRole" Relationship="NietzscheBiography.Domain.Models.event_participant_fk_event_participant_thematic_role" FromRole="event_participant" ToRole="thematic_role" />
+        </EntityType>
+        <EntityType Name="EventType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryId" Type="Int32" />
+          <Property Name="Label" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Events" Relationship="NietzscheBiography.Domain.Models.event_fk_event_classification" FromRole="event_type" ToRole="event" />
+          <NavigationProperty Name="Category" Relationship="NietzscheBiography.Domain.Models.event_type_fk_event_type_categorization" FromRole="event_type" ToRole="event_category" />
+        </EntityType>
+        <EntityType Name="Individual" BaseType="NietzscheBiography.Domain.Models.Participant">
+          <Property Name="Gender" Type="NietzscheBiography.Domain.Models.Gender" />
+          <Property Name="Profession" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Nationality" Relationship="NietzscheBiography.Domain.Models.individual_fk_individual_nationality" FromRole="individual" ToRole="country" />
+          <Property Name="FullName" Type="NietzscheBiography.Domain.Models.Name" Nullable="false" />
+          <Property Type="Int64" Name="NationalityId" />
+        </EntityType>
+        <EntityType Name="Interval">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="InitiatingEventId" Type="Int64" Nullable="false" />
+          <Property Name="ConcludingEventId" Type="Int64" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="InitiatingEvent" Relationship="NietzscheBiography.Domain.Models.interval_fk_concluding_event" FromRole="interval" ToRole="event" />
+          <NavigationProperty Name="ConcludingEvent" Relationship="NietzscheBiography.Domain.Models.interval_fk_initiating_event" FromRole="interval" ToRole="event" />
+          <NavigationProperty Name="Citations" Relationship="NietzscheBiography.Domain.Models.interval_citation" FromRole="interval" ToRole="citation" />
+          <NavigationProperty Name="RelatedRelationships" Relationship="NietzscheBiography.Domain.Models.relationship_interval" FromRole="interval" ToRole="relationship" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="EventInvolvements" Relationship="NietzscheBiography.Domain.Models.event_location_fk_event_location_2" FromRole="location" ToRole="event_location" />
+          <NavigationProperty Name="Organizations" Relationship="NietzscheBiography.Domain.Models.organization_fk_organization_establishment" FromRole="location" ToRole="organization" />
+          <Property Type="NietzscheBiography.Domain.Models.LocationEntityType" Name="EntityType" Nullable="false" a:GetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Protected" />
+          <Property Type="Geography" Name="GeoLocation" />
+        </EntityType>
+        <EntityType Name="MediaItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="OriginalId" Type="Int64" />
+          <Property Name="CompositeId" Type="Int64" />
+          <Property Name="TypeId" Type="Int32" />
+          <Property Name="Title" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="OriginalTitle" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Url" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="Isbn" Type="String" MaxLength="24" Unicode="true" FixedLength="false" />
+          <Property Name="Comment" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Citations" Relationship="NietzscheBiography.Domain.Models.citation_fk_citation_media_item" FromRole="media_item" ToRole="citation" />
+          <NavigationProperty Name="Editions" Relationship="NietzscheBiography.Domain.Models.media_item_fk_edition_of_media_item" FromRole="media_item" ToRole="media_item1" />
+          <NavigationProperty Name="Original" Relationship="NietzscheBiography.Domain.Models.media_item_fk_edition_of_media_item" FromRole="media_item1" ToRole="media_item" />
+          <NavigationProperty Name="Type" Relationship="NietzscheBiography.Domain.Models.media_item_fk_media_item_classification" FromRole="media_item" ToRole="media_item_type" />
+          <NavigationProperty Name="Parts" Relationship="NietzscheBiography.Domain.Models.media_item_fk_part_of_media_item" FromRole="media_item" ToRole="media_item1" />
+          <NavigationProperty Name="Composite" Relationship="NietzscheBiography.Domain.Models.media_item_fk_part_of_media_item" FromRole="media_item1" ToRole="media_item" />
+          <NavigationProperty Name="RelatedEvents" Relationship="NietzscheBiography.Domain.Models.event_object" FromRole="media_item" ToRole="event" />
+        </EntityType>
+        <EntityType Name="MediaItemType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Label" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="MediaItems" Relationship="NietzscheBiography.Domain.Models.media_item_fk_media_item_classification" FromRole="media_item_type" ToRole="media_item" />
+        </EntityType>
+        <EntityType Name="Organization" BaseType="NietzscheBiography.Domain.Models.Participant">
+          <Property Name="TypeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Location" Relationship="NietzscheBiography.Domain.Models.organization_fk_organization_establishment" FromRole="organization" ToRole="location" />
+          <NavigationProperty Name="Type" Relationship="NietzscheBiography.Domain.Models.organization_fk_organization_classification" FromRole="organization" ToRole="organization_type" />
+          <Property Type="Int64" Name="LocationId" />
+        </EntityType>
+        <EntityType Name="OrganizationType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Label" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Organizations" Relationship="NietzscheBiography.Domain.Models.organization_fk_organization_classification" FromRole="organization_type" ToRole="organization" />
+        </EntityType>
+        <EntityType Name="Participant">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="AlternativeNames" Relationship="NietzscheBiography.Domain.Models.alternative_name_fk_alternative_name_participant" FromRole="participant" ToRole="alternative_name" />
+          <NavigationProperty Name="EventInvolvements" Relationship="NietzscheBiography.Domain.Models.event_participant_fk_event_participant_2" FromRole="participant" ToRole="event_participant" />
+          <NavigationProperty Name="DeterminantRelationships" Relationship="NietzscheBiography.Domain.Models.relationship_fk_determinant_participant" FromRole="participant" ToRole="relationship" />
+          <NavigationProperty Name="ImmanentRelationships" Relationship="NietzscheBiography.Domain.Models.relationship_fk_immanent_participant" FromRole="participant" ToRole="relationship" />
+          <Property Type="NietzscheBiography.Domain.Models.LocationEntityType" Name="EntityType" Nullable="false" a:SetterAccess="Protected" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:GetterAccess="Protected" />
+        </EntityType>
+        <EntityType Name="PopulatedPlace" BaseType="NietzscheBiography.Domain.Models.Location">
+          <Property Name="CountryId" Type="Int64" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TimeZone" Type="String" MaxLength="6" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="Addresses" Relationship="NietzscheBiography.Domain.Models.address_fk_address_populated_place" FromRole="populated_place" ToRole="address" />
+          <NavigationProperty Name="Country" Relationship="NietzscheBiography.Domain.Models.populated_place_fk_populated_place_country" FromRole="populated_place" ToRole="country" />
+        </EntityType>
+        <EntityType Name="Relationship">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DeterminantId" Type="Int64" Nullable="false" />
+          <Property Name="ImmanentId" Type="Int64" Nullable="false" />
+          <Property Name="TypeId" Type="Int32" Nullable="false" />
+          <Property Name="InverseTypeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Immanent" Relationship="NietzscheBiography.Domain.Models.relationship_fk_determinant_participant" FromRole="relationship" ToRole="participant" />
+          <NavigationProperty Name="Determinant" Relationship="NietzscheBiography.Domain.Models.relationship_fk_immanent_participant" FromRole="relationship" ToRole="participant" />
+          <NavigationProperty Name="InverseType" Relationship="NietzscheBiography.Domain.Models.relationship_fk_inverse_relationship_classification" FromRole="relationship" ToRole="relationship_type" />
+          <NavigationProperty Name="Type" Relationship="NietzscheBiography.Domain.Models.relationship_fk_relationship_classification" FromRole="relationship" ToRole="relationship_type" />
+          <NavigationProperty Name="Intervals" Relationship="NietzscheBiography.Domain.Models.relationship_interval" FromRole="relationship" ToRole="interval" />
+        </EntityType>
+        <EntityType Name="RelationshipCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Label" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Types" Relationship="NietzscheBiography.Domain.Models.relationship_type_fk_relationship_type_categorization" FromRole="relationship_category" ToRole="relationship_type" />
+        </EntityType>
+        <EntityType Name="RelationshipType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryId" Type="Int32" />
+          <Property Name="Label" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="RelationshipsWhereInverseType" Relationship="NietzscheBiography.Domain.Models.relationship_fk_inverse_relationship_classification" FromRole="relationship_type" ToRole="relationship" />
+          <NavigationProperty Name="RelationshipsWhereType" Relationship="NietzscheBiography.Domain.Models.relationship_fk_relationship_classification" FromRole="relationship_type" ToRole="relationship" />
+          <NavigationProperty Name="Category" Relationship="NietzscheBiography.Domain.Models.relationship_type_fk_relationship_type_categorization" FromRole="relationship_type" ToRole="relationship_category" />
+        </EntityType>
+        <EntityType Name="ThematicRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          </EntityType>
+        <Association Name="address_fk_address_populated_place">
+          <End Role="populated_place" Type="NietzscheBiography.Domain.Models.PopulatedPlace" Multiplicity="1" />
+          <End Role="address" Type="NietzscheBiography.Domain.Models.Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="populated_place">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="address">
+              <PropertyRef Name="PopulatedPlaceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="alternative_name_fk_alternative_name_participant">
+          <End Role="participant" Type="NietzscheBiography.Domain.Models.Participant" Multiplicity="1" />
+          <End Role="alternative_name" Type="NietzscheBiography.Domain.Models.AlternativeName" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="participant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="alternative_name">
+              <PropertyRef Name="ParticipantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="citation_fk_citation_media_item">
+          <End Role="media_item" Type="NietzscheBiography.Domain.Models.MediaItem" Multiplicity="1" />
+          <End Role="citation" Type="NietzscheBiography.Domain.Models.Citation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="media_item">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="citation">
+              <PropertyRef Name="MediaItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="individual_fk_individual_nationality">
+          <End Role="country" Type="NietzscheBiography.Domain.Models.Country" Multiplicity="0..1" />
+          <End Role="individual" Type="NietzscheBiography.Domain.Models.Individual" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="country">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="individual">
+              <PropertyRef Name="NationalityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="populated_place_fk_populated_place_country">
+          <End Role="country" Type="NietzscheBiography.Domain.Models.Country" Multiplicity="0..1" />
+          <End Role="populated_place" Type="NietzscheBiography.Domain.Models.PopulatedPlace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="country">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="populated_place">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="event_fk_event_classification">
+          <End Role="event_type" Type="NietzscheBiography.Domain.Models.EventType" Multiplicity="1" />
+          <End Role="event" Type="NietzscheBiography.Domain.Models.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="event_type">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="event">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="event_location_fk_event_location_1">
+          <End Role="event" Type="NietzscheBiography.Domain.Models.Event" Multiplicity="1" />
+          <End Role="event_location" Type="NietzscheBiography.Domain.Models.LocationEventInvolvement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="event">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="event_location">
+              <PropertyRef Name="EventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="event_participant_fk_event_participant_1">
+          <End Role="event" Type="NietzscheBiography.Domain.Models.Event" Multiplicity="1" />
+          <End Role="event_participant" Type="NietzscheBiography.Domain.Models.ParticipantEventInvolvement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="event">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="event_participant">
+              <PropertyRef Name="EventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="interval_fk_concluding_event">
+          <End Role="event" Type="NietzscheBiography.Domain.Models.Event" Multiplicity="1" />
+          <End Role="interval" Type="NietzscheBiography.Domain.Models.Interval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="event">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="interval">
+              <PropertyRef Name="InitiatingEventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="interval_fk_initiating_event">
+          <End Role="event" Type="NietzscheBiography.Domain.Models.Event" Multiplicity="1" />
+          <End Role="interval" Type="NietzscheBiography.Domain.Models.Interval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="event">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="interval">
+              <PropertyRef Name="ConcludingEventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="event_type_fk_event_type_categorization">
+          <End Role="event_category" Type="NietzscheBiography.Domain.Models.EventCategory" Multiplicity="0..1" />
+          <End Role="event_type" Type="NietzscheBiography.Domain.Models.EventType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="event_category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="event_type">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="event_location_fk_event_location_2">
+          <End Role="location" Type="NietzscheBiography.Domain.Models.Location" Multiplicity="1" />
+          <End Role="event_location" Type="NietzscheBiography.Domain.Models.LocationEventInvolvement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="location">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="event_location">
+              <PropertyRef Name="LocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="event_location_fk_event_location_thematic_role">
+          <End Role="thematic_role" Type="NietzscheBiography.Domain.Models.ThematicRole" Multiplicity="1" />
+          <End Role="event_location" Type="NietzscheBiography.Domain.Models.LocationEventInvolvement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="thematic_role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="event_location">
+              <PropertyRef Name="ThematicRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="event_participant_fk_event_participant_2">
+          <End Role="participant" Type="NietzscheBiography.Domain.Models.Participant" Multiplicity="1" />
+          <End Role="event_participant" Type="NietzscheBiography.Domain.Models.ParticipantEventInvolvement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="participant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="event_participant">
+              <PropertyRef Name="ParticipantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="event_participant_fk_event_participant_thematic_role">
+          <End Role="thematic_role" Type="NietzscheBiography.Domain.Models.ThematicRole" Multiplicity="1" />
+          <End Role="event_participant" Type="NietzscheBiography.Domain.Models.ParticipantEventInvolvement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="thematic_role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="event_participant">
+              <PropertyRef Name="ThematicRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="organization_fk_organization_establishment">
+          <End Role="location" Type="NietzscheBiography.Domain.Models.Location" Multiplicity="0..1" />
+          <End Role="organization" Type="NietzscheBiography.Domain.Models.Organization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="location">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="organization">
+              <PropertyRef Name="LocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="media_item_fk_edition_of_media_item">
+          <End Role="media_item" Type="NietzscheBiography.Domain.Models.MediaItem" Multiplicity="0..1" />
+          <End Role="media_item1" Type="NietzscheBiography.Domain.Models.MediaItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="media_item">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="media_item1">
+              <PropertyRef Name="CompositeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="media_item_fk_media_item_classification">
+          <End Role="media_item_type" Type="NietzscheBiography.Domain.Models.MediaItemType" Multiplicity="0..1" />
+          <End Role="media_item" Type="NietzscheBiography.Domain.Models.MediaItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="media_item_type">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="media_item">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="media_item_fk_part_of_media_item">
+          <End Role="media_item" Type="NietzscheBiography.Domain.Models.MediaItem" Multiplicity="0..1" />
+          <End Role="media_item1" Type="NietzscheBiography.Domain.Models.MediaItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="media_item">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="media_item1">
+              <PropertyRef Name="OriginalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="organization_fk_organization_classification">
+          <End Role="organization_type" Type="NietzscheBiography.Domain.Models.OrganizationType" Multiplicity="1" />
+          <End Role="organization" Type="NietzscheBiography.Domain.Models.Organization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="organization_type">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="organization">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="relationship_fk_determinant_participant">
+          <End Role="participant" Type="NietzscheBiography.Domain.Models.Participant" Multiplicity="1" />
+          <End Role="relationship" Type="NietzscheBiography.Domain.Models.Relationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="participant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="relationship">
+              <PropertyRef Name="ImmanentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="relationship_fk_immanent_participant">
+          <End Role="participant" Type="NietzscheBiography.Domain.Models.Participant" Multiplicity="1" />
+          <End Role="relationship" Type="NietzscheBiography.Domain.Models.Relationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="participant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="relationship">
+              <PropertyRef Name="DeterminantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="relationship_fk_inverse_relationship_classification">
+          <End Role="relationship_type" Type="NietzscheBiography.Domain.Models.RelationshipType" Multiplicity="1" />
+          <End Role="relationship" Type="NietzscheBiography.Domain.Models.Relationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="relationship_type">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="relationship">
+              <PropertyRef Name="InverseTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="relationship_fk_relationship_classification">
+          <End Role="relationship_type" Type="NietzscheBiography.Domain.Models.RelationshipType" Multiplicity="1" />
+          <End Role="relationship" Type="NietzscheBiography.Domain.Models.Relationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="relationship_type">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="relationship">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="relationship_type_fk_relationship_type_categorization">
+          <End Role="relationship_category" Type="NietzscheBiography.Domain.Models.RelationshipCategory" Multiplicity="0..1" />
+          <End Role="relationship_type" Type="NietzscheBiography.Domain.Models.RelationshipType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="relationship_category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="relationship_type">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="event_citation">
+          <End Role="event" Type="NietzscheBiography.Domain.Models.Event" Multiplicity="*" />
+          <End Role="citation" Type="NietzscheBiography.Domain.Models.Citation" Multiplicity="*" />
+        </Association>
+        <Association Name="event_object">
+          <End Role="event" Type="NietzscheBiography.Domain.Models.Event" Multiplicity="*" />
+          <End Role="media_item" Type="NietzscheBiography.Domain.Models.MediaItem" Multiplicity="*" />
+        </Association>
+        <Association Name="interval_citation">
+          <End Role="interval" Type="NietzscheBiography.Domain.Models.Interval" Multiplicity="*" />
+          <End Role="citation" Type="NietzscheBiography.Domain.Models.Citation" Multiplicity="*" />
+        </Association>
+        <Association Name="relationship_interval">
+          <End Role="relationship" Type="NietzscheBiography.Domain.Models.Relationship" Multiplicity="*" />
+          <End Role="interval" Type="NietzscheBiography.Domain.Models.Interval" Multiplicity="*" />
+        </Association>
+        <ComplexType Name="Name" >
+          <Property Type="String" Name="LastName" Nullable="false" FixedLength="false" MaxLength="50" Unicode="true" />
+          <Property Type="String" Name="GivenNames" Nullable="false" Unicode="true" MaxLength="100" FixedLength="false" />
+          <Property Type="String" Name="Prefix" Nullable="false" Unicode="true" FixedLength="false" MaxLength="20" />
+          <Property Type="String" Name="Suffix" Nullable="false" Unicode="true" FixedLength="false" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="SinPlurText" >
+          <Property Type="String" Name="Singular" Nullable="false" FixedLength="false" MaxLength="50" Unicode="true" />
+          <Property Type="String" Name="Plural" Nullable="false" FixedLength="false" MaxLength="50" Unicode="true" />
+        </ComplexType>
+        <ComplexType Name="ImpreciseDate" >
+          <Property Type="DateTime" Name="Date" />
+          <Property Type="NietzscheBiography.Domain.Models.DateTimePrecision" Name="Precision" />
+        </ComplexType>
+        <EnumType Name="DateTimePrecision" UnderlyingType="Byte">
+          <Member Name="Second" Value="0" />
+          <Member Name="Minute" Value="1" />
+          <Member Name="Hour" Value="2" />
+          <Member Name="DayTime" Value="3" />
+          <Member Name="Day" Value="4" />
+          <Member Name="Week" Value="5" />
+          <Member Name="Month" Value="6" />
+          <Member Name="Season" Value="7" />
+          <Member Name="Year" Value="8" />
+          <Member Name="Decade" Value="9" />
+          <Member Name="Century" Value="10" />
+        </EnumType>
+        <EnumType Name="Gender" UnderlyingType="Byte">
+          <Member Name="Male" Value="1" />
+          <Member Name="Female" Value="2" />
+        </EnumType>
+        <EnumType Name="LocationEntityType" UnderlyingType="Byte">
+          <Member Name="Country" Value="1" />
+          <Member Name="PopulatedPlace" Value="2" />
+          <Member Name="Address" Value="3" />
+        </EnumType>
+        <EnumType Name="ParticipantEntityType" UnderlyingType="Byte">
+          <Member Name="Individual" Value="1" />
+          <Member Name="Organization" Value="2" />
+        </EnumType>
+        <ComplexType Name="EventOccurrence" >
+          <Property Type="NietzscheBiography.Domain.Models.ImpreciseDate" Name="Start" Nullable="false" />
+          <Property Type="NietzscheBiography.Domain.Models.ImpreciseDate" Name="End" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="EventTitle">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Type="Int64" Name="EventId" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_event_title_cache_event">
+          <End Type="NietzscheBiography.Domain.Models.Event" Role="Event" Multiplicity="1" />
+          <End Type="NietzscheBiography.Domain.Models.EventTitle" Role="event_title_cache" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="event_title_cache">
+              <PropertyRef Name="EventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NietzscheBiographyDomainModelsStoreContainer" CdmEntityContainer="NietzscheBiographyDbContext">
+          <EntitySetMapping Name="AlternativeNames">
+            <EntityTypeMapping TypeName="NietzscheBiography.Domain.Models.AlternativeName">
+              <MappingFragment StoreEntitySet="alternative_name">
+                <ScalarProperty Name="Id" ColumnName="id" />
+                <ScalarProperty Name="ParticipantId" ColumnName="participant_id" />
+                <ScalarProperty Name="Name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Citations">
+            <EntityTypeMapping TypeName="NietzscheBiography.Domain.Models.Citation">
+              <MappingFragment StoreEntitySet="citation">
+                <ScalarProperty Name="Id" ColumnName="id" />
+                <ScalarProperty Name="MediaItemId" ColumnName="media_item_id" />
+                <ScalarProperty Name="Title" ColumnName="title" />
+                <ScalarProperty Name="Text" ColumnName="text" />
+                <ScalarProperty Name="Standalone" ColumnName="standalone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Events">
+            <EntityTypeMapping TypeName="NietzscheBiography.Domain.Models.Event">
+              <MappingFragment StoreEntitySet="event">
+                <ScalarProperty Name="Id" ColumnName="id" />
+                <ScalarProperty Name="TypeId" ColumnName="event_type_id" />
+                <ScalarProperty Name="Description" ColumnName="description" />
+                <ScalarProperty Name="Importance" ColumnName="importance" />
+                <ComplexProperty Name="Occurrence">
+                  <ComplexProperty Name="Start">
+                    <ScalarProperty Name="Precision" ColumnName="start_date_precision" />
+                    <ScalarProperty Name="Date" ColumnName="start_date" />
+                  </ComplexProperty>
+                  <ComplexProperty Name="End">
+                    <ScalarProperty Name="Precision" ColumnName="end_date_precision" />
+                    <ScalarProperty Name="Date" ColumnName="end_date" />
+                  </ComplexProperty>
+                </ComplexProperty>
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EventCategories">
+            <EntityTypeMapping TypeName="NietzscheBiography.Domain.Models.EventCategory">
+              <MappingFragment StoreEntitySet="event_category">
+                <ScalarProperty Name="Id" ColumnName="id" />
+                <ScalarProperty Name="Label" ColumnName="label" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LocationEventInvolvements">
+            <EntityTypeMapping TypeName="NietzscheBiography.Domain.Models.LocationEventInvolvement">
+              <MappingFragment StoreEntitySet="event_location">
+                <ScalarProperty Name="EventId" ColumnName="event_id" />
+                <ScalarProperty Name="LocationId" ColumnName="location_id" />
+                <ScalarProperty Name="ThematicRoleId" ColumnName="thematic_role_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ParticipantEventInvolvements">
+            <EntityTypeMapping TypeName="NietzscheBiography.Domain.Models.ParticipantEventInvolvement">
+              <MappingFragment StoreEntitySet="event_participant">
+                <ScalarProperty Name="EventId" ColumnName="event_id" />
+                <ScalarProperty Name="ParticipantId" ColumnName="participant_id" />
+                <ScalarProperty Name="ThematicRoleId" ColumnName="thematic_role_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EventTypes">
+            <EntityTypeMapping TypeName="NietzscheBiography.Domain.Models.EventType">
+              <MappingFragment StoreEntitySet="event_type">
+                <ScalarProperty Name="Id" ColumnName="id" />
+                <ScalarProperty Name="CategoryId" ColumnName="event_category_id" />
+                <ScalarProperty Name="Label" ColumnName="label" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Intervals">
+            <EntityTypeMapping TypeName="NietzscheBiography.Domain.Models.Interval">
+              <MappingFragment StoreEntitySet="interval">
+                <ScalarProperty Name="Id" ColumnName="id" />
+                <ScalarProperty Name="InitiatingEventId" ColumnName="initiating_event_id" />
+                <ScalarProperty Name="ConcludingEventId" ColumnName="concluding_event_id" />
+                <ScalarProperty Name="Description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Locations">
+            <EntityTypeMapping TypeName="IsTypeOf(NietzscheBiography.Domain.Models.Location)">
+              <MappingFragment StoreEntitySet="location">
+                <ScalarProperty Name="GeoLocation" ColumnName="geo_location" />
+                <ScalarProperty Name="EntityType" ColumnName="type" />
+                <ScalarProperty Name="Id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(NietzscheBiography.Domain.Models.PopulatedPlace)">
+              <MappingFragment StoreEntitySet="populated_place">
+                <ScalarProperty Name="Id" ColumnName="location_id" />
+                <ScalarProperty Name="TimeZone" ColumnName="time_zone" />
+                <ScalarProperty Name="Name" ColumnName="name" />
+                <ScalarProperty Name="CountryId" ColumnName="country_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(NietzscheBiography.Domain.Models.Country)">
+              <MappingFragment StoreEntitySet="country">
+                <ScalarProperty Name="Id" ColumnName="location_id" />
+                <ScalarProperty Name="Iana" ColumnName="iana_code" />
+                <ScalarProperty Name="Ison" ColumnName="ison_code" />
+                <ScalarProperty Name="Iso3" ColumnName="iso3_code" />
+                <ScalarProperty Name="Iso2" ColumnName="iso2_code" />
+                <ScalarProperty Name="Fips104" ColumnName="fips104_code" />
+                <ScalarProperty Name="Name" ColumnName="name" />
+                <ComplexProperty Name="Nationality">
+                  <ScalarProperty Name="Plural" ColumnName="nationality_plural" />
+                  <ScalarProperty Name="Singular" ColumnName="nationality_singular" />
+                </ComplexProperty>
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(NietzscheBiography.Domain.Models.Address)">
+              <MappingFragment StoreEntitySet="address">
+                <ScalarProperty Name="Id" ColumnName="location_id" />
+                <ScalarProperty Name="ApartmentNumber" ColumnName="apartment_number" />
+                <ScalarProperty Name="Floor" ColumnName="floor" />
+                <ScalarProperty Name="Entrance" ColumnName="entrance" />
+                <ScalarProperty Name="BuildingNumber" ColumnName="building_number" />
+                <ScalarProperty Name="StreetName" ColumnName="street_name" />
+                <ScalarProperty Name="PostalCode" ColumnName="postal_code" />
+                <ScalarProperty Name="PopulatedPlaceId" ColumnName="populated_place_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MediaItems">
+            <EntityTypeMapping TypeName="NietzscheBiography.Domain.Models.MediaItem">
+              <MappingFragment StoreEntitySet="media_item">
+                <ScalarProperty Name="Id" ColumnName="id" />
+                <ScalarProperty Name="OriginalId" ColumnName="original_media_item_id" />
+                <ScalarProperty Name="CompositeId" ColumnName="composite_media_item_id" />
+                <ScalarProperty Name="TypeId" ColumnName="media_item_type_id" />
+                <ScalarProperty Name="Title" ColumnName="title" />
+                <ScalarProperty Name="OriginalTitle" ColumnName="original_title" />
+                <ScalarProperty Name="Url" ColumnName="url" />
+                <ScalarProperty Name="Isbn" ColumnName="isbn" />
+                <ScalarProperty Name="Comment" ColumnName="comment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MediaItemTypes">
+            <EntityTypeMapping TypeName="NietzscheBiography.Domain.Models.MediaItemType">
+              <MappingFragment StoreEntitySet="media_item_type">
+                <ScalarProperty Name="Id" ColumnName="id" />
+                <ScalarProperty Name="Label" ColumnName="label" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrganizationTypes">
+            <EntityTypeMapping TypeName="NietzscheBiography.Domain.Models.OrganizationType">
+              <MappingFragment StoreEntitySet="organization_type">
+                <ScalarProperty Name="Id" ColumnName="id" />
+                <ScalarProperty Name="Label" ColumnName="label" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Participants">
+            <EntityTypeMapping TypeName="IsTypeOf(NietzscheBiography.Domain.Models.Participant)">
+              <MappingFragment StoreEntitySet="participant">
+                <ScalarProperty Name="EntityType" ColumnName="type" />
+                <ScalarProperty Name="Id" ColumnName="id" />
+                <ScalarProperty Name="Description" ColumnName="description" />
+                <ScalarProperty Name="Name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(NietzscheBiography.Domain.Models.Individual)">
+              <MappingFragment StoreEntitySet="individual">
+                <ScalarProperty Name="NationalityId" ColumnName="location_id" />
+                <ScalarProperty Name="Id" ColumnName="participant_id" />
+                <ScalarProperty Name="Profession" ColumnName="profession" />
+                <ScalarProperty Name="Gender" ColumnName="gender" />
+                <ComplexProperty Name="FullName">
+                  <ScalarProperty Name="Suffix" ColumnName="name_suffix" />
+                  <ScalarProperty Name="Prefix" ColumnName="name_prefix" />
+                  <ScalarProperty Name="LastName" ColumnName="last_name" />
+                  <ScalarProperty Name="GivenNames" ColumnName="given_names" />
+                </ComplexProperty>
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(NietzscheBiography.Domain.Models.Organization)">
+              <MappingFragment StoreEntitySet="organization">
+                
+                <ScalarProperty Name="LocationId" ColumnName="location_id" />
+                <ScalarProperty Name="Id" ColumnName="participant_id" />
+                <ScalarProperty Name="TypeId" ColumnName="organization_type_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Relationships">
+            <EntityTypeMapping TypeName="NietzscheBiography.Domain.Models.Relationship">
+              <MappingFragment StoreEntitySet="relationship">
+                <ScalarProperty Name="Id" ColumnName="id" />
+                <ScalarProperty Name="DeterminantId" ColumnName="determinant_participant_id" />
+                <ScalarProperty Name="ImmanentId" ColumnName="immanent_participant_id" />
+                <ScalarProperty Name="TypeId" ColumnName="relationship_type_id" />
+                <ScalarProperty Name="InverseTypeId" ColumnName="inverse_relationship_type_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RelationshipCategories">
+            <EntityTypeMapping TypeName="NietzscheBiography.Domain.Models.RelationshipCategory">
+              <MappingFragment StoreEntitySet="relationship_category">
+                <ScalarProperty Name="Id" ColumnName="id" />
+                <ScalarProperty Name="Label" ColumnName="label" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RelationshipTypes">
+            <EntityTypeMapping TypeName="NietzscheBiography.Domain.Models.RelationshipType">
+              <MappingFragment StoreEntitySet="relationship_type">
+                <ScalarProperty Name="Id" ColumnName="id" />
+                <ScalarProperty Name="CategoryId" ColumnName="relationship_category_id" />
+                <ScalarProperty Name="Label" ColumnName="label" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ThematicRoles">
+            <EntityTypeMapping TypeName="NietzscheBiography.Domain.Models.ThematicRole">
+              <MappingFragment StoreEntitySet="thematic_role">
+                <ScalarProperty Name="Id" ColumnName="id" />
+                <ScalarProperty Name="Name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="event_citation" TypeName="NietzscheBiography.Domain.Models.event_citation" StoreEntitySet="event_citation">
+            <EndProperty Name="event">
+              <ScalarProperty Name="Id" ColumnName="event_id" />
+            </EndProperty>
+            <EndProperty Name="citation">
+              <ScalarProperty Name="Id" ColumnName="citation_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="event_object" TypeName="NietzscheBiography.Domain.Models.event_object" StoreEntitySet="event_object">
+            <EndProperty Name="event">
+              <ScalarProperty Name="Id" ColumnName="event_id" />
+            </EndProperty>
+            <EndProperty Name="media_item">
+              <ScalarProperty Name="Id" ColumnName="media_item_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="interval_citation" TypeName="NietzscheBiography.Domain.Models.interval_citation" StoreEntitySet="interval_citation">
+            <EndProperty Name="interval">
+              <ScalarProperty Name="Id" ColumnName="interval_id" />
+            </EndProperty>
+            <EndProperty Name="citation">
+              <ScalarProperty Name="Id" ColumnName="citation_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="relationship_interval" TypeName="NietzscheBiography.Domain.Models.relationship_interval" StoreEntitySet="relationship_interval">
+            <EndProperty Name="relationship">
+              <ScalarProperty Name="Id" ColumnName="relationship_id" />
+            </EndProperty>
+            <EndProperty Name="interval">
+              <ScalarProperty Name="Id" ColumnName="interval_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="EventTitles">
+            <EntityTypeMapping TypeName="NietzscheBiography.Domain.Models.EventTitle">
+              <MappingFragment StoreEntitySet="event_title_cache">
+                <ScalarProperty Name="Title" ColumnName="title" />
+                <ScalarProperty Name="EventId" ColumnName="event_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

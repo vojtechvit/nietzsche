@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d5ef1f01a26a4b4e9ff8f1a3c467f42c" Name="Overview" ZoomLevel="39">
+        <EntityTypeShape EntityType="NietzscheBiography.Domain.Models.Address" Width="1.5" PointX="17.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NietzscheBiography.Domain.Models.AlternativeName" Width="1.5" PointX="5.5" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="NietzscheBiography.Domain.Models.Citation" Width="1.5" PointX="11.125" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NietzscheBiography.Domain.Models.Country" Width="1.5" PointX="12.5" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NietzscheBiography.Domain.Models.Event" Width="1.5" PointX="15" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="NietzscheBiography.Domain.Models.EventCategory" Width="1.5" PointX="17.125" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NietzscheBiography.Domain.Models.LocationEventInvolvement" Width="1.5" PointX="14.875" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NietzscheBiography.Domain.Models.ParticipantEventInvolvement" Width="1.5" PointX="11.125" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="NietzscheBiography.Domain.Models.EventType" Width="1.5" PointX="17.125" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="NietzscheBiography.Domain.Models.Individual" Width="1.5" PointX="6.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NietzscheBiography.Domain.Models.Interval" Width="1.5" PointX="11.125" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NietzscheBiography.Domain.Models.Location" Width="1.5" PointX="14.875" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NietzscheBiography.Domain.Models.MediaItem" Width="1.5" PointX="15" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="NietzscheBiography.Domain.Models.MediaItemType" Width="1.5" PointX="17.125" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="NietzscheBiography.Domain.Models.Organization" Width="1.5" PointX="8.875" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NietzscheBiography.Domain.Models.OrganizationType" Width="1.5" PointX="8.875" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NietzscheBiography.Domain.Models.Participant" Width="1.5" PointX="7.625" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="NietzscheBiography.Domain.Models.PopulatedPlace" Width="1.5" PointX="14.875" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NietzscheBiography.Domain.Models.Relationship" Width="1.5" PointX="7.625" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NietzscheBiography.Domain.Models.RelationshipCategory" Width="1.5" PointX="5.5" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NietzscheBiography.Domain.Models.RelationshipType" Width="1.5" PointX="5.5" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NietzscheBiography.Domain.Models.ThematicRole" Width="1.5" PointX="11.125" PointY="8.25" IsExpanded="true" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.address_fk_address_populated_place" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.alternative_name_fk_alternative_name_participant" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.citation_fk_citation_media_item" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.individual_fk_individual_nationality" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.populated_place_fk_populated_place_country" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.event_fk_event_classification" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.event_location_fk_event_location_1" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.event_participant_fk_event_participant_1" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.interval_fk_concluding_event" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.interval_fk_initiating_event" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.event_type_fk_event_type_categorization" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.event_location_fk_event_location_2" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.event_location_fk_event_location_thematic_role" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.event_participant_fk_event_participant_2" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.event_participant_fk_event_participant_thematic_role" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.organization_fk_organization_establishment" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.media_item_fk_edition_of_media_item" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.media_item_fk_media_item_classification" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.media_item_fk_part_of_media_item" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.organization_fk_organization_classification" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.relationship_fk_determinant_participant" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.relationship_fk_immanent_participant" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.relationship_fk_inverse_relationship_classification" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.relationship_fk_relationship_classification" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.relationship_type_fk_relationship_type_categorization" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.event_citation" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.event_object" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.interval_citation" ManuallyRouted="false" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.relationship_interval" ManuallyRouted="false" />
+        <InheritanceConnector EntityType="NietzscheBiography.Domain.Models.PopulatedPlace" />
+        <InheritanceConnector EntityType="NietzscheBiography.Domain.Models.Country" ManuallyRouted="true" >
+          <ConnectorPoint PointX="15.625" PointY="5" />
+          <ConnectorPoint PointX="15.625" PointY="4.0149833269890358" />
+          <ConnectorPoint PointX="13.25" PointY="4.0149833269890358" />
+          <ConnectorPoint PointX="13.25" PointY="3.6244921875" />
+        </InheritanceConnector>
+        <InheritanceConnector EntityType="NietzscheBiography.Domain.Models.Address" ManuallyRouted="true" >
+          <ConnectorPoint PointX="15.625" PointY="5" />
+          <ConnectorPoint PointX="15.625" PointY="4.0059085599111093" />
+          <ConnectorPoint PointX="18" PointY="4.0059085599111093" />
+          <ConnectorPoint PointX="18" PointY="3.4321907552083331" />
+        </InheritanceConnector>
+        <InheritanceConnector EntityType="NietzscheBiography.Domain.Models.Individual" ManuallyRouted="true" >
+          <ConnectorPoint PointX="8.375" PointY="11" />
+          <ConnectorPoint PointX="8.375" PointY="9.0275838508718" />
+          <ConnectorPoint PointX="7.25" PointY="9.0275838508718" />
+          <ConnectorPoint PointX="7.25" PointY="6.9802864583333335" />
+        </InheritanceConnector>
+        <InheritanceConnector EntityType="NietzscheBiography.Domain.Models.Organization" ManuallyRouted="true" >
+          <ConnectorPoint PointX="8.375" PointY="11" />
+          <ConnectorPoint PointX="8.375" PointY="9.03235448811244" />
+          <ConnectorPoint PointX="9.625" PointY="9.03235448811244" />
+          <ConnectorPoint PointX="9.625" PointY="6.7879850260416656" />
+        </InheritanceConnector>
+        <InheritanceConnector EntityType="NietzscheBiography.Domain.Models.Organization" />
+        <InheritanceConnector EntityType="NietzscheBiography.Domain.Models.Country" />
+        <InheritanceConnector EntityType="NietzscheBiography.Domain.Models.Address" />
+        <InheritanceConnector EntityType="NietzscheBiography.Domain.Models.PopulatedPlace" />
+        <InheritanceConnector EntityType="NietzscheBiography.Domain.Models.Individual" />
+        <EntityTypeShape EntityType="NietzscheBiography.Domain.Models.EventTitle" Width="1.5" PointX="17.125" PointY="13.375" />
+        <AssociationConnector Association="NietzscheBiography.Domain.Models.FK_event_title_cache_event" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

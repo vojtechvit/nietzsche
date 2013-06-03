@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<templates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="urn:ndb:ett SentenceTemplates.xsd"
+           xmlns="urn:ndb:ett">
+  <!-- TODO: Some words won't be correct:
+       - at vs in
+       - was vs were
+       -->
+  <template name="Accident">
+    <version>{Patient} suffered an accident.</version>
+    <version>{Patient} suffered an accident in {Location}.</version>
+  </template>
+  <template name="Acquaintance">
+    <version>{Agent} became acquainted with each other.</version>
+    <version>{Agent} became acquainted with each other in {Location}.</version>
+  </template>
+  <template name="Appointment">
+    <!-- Following collides with meeting -->
+    <version>{Agent} met.</version>
+    <version>{Agent} met in {Location}.</version>
+
+    <version>{Agent} appointed {Patient}.</version>
+    <version>{Agent} appointed {Patient} in {Location}.</version>
+  </template>
+  <template name="Arrival">
+    <version>{Agent} arrived in {Location}.</version>
+  </template>
+  <template name="Attendance">
+    <version>{Agent} attended {Object}.</version>
+    <version>{Agent} attended {Object} in {Location}.</version>
+  </template>
+  <template name="Audit">
+    <version>{Agent} audited {Object}.</version>
+    <version>{Agent} audited {Object} in {Location}.</version>
+  </template>
+  <template name="Birth">
+    <!-- AGENT in the DB! Should be patient -->
+    <version>{Agent} was born.</version>
+    <version>{Agent} was born in {Location}.</version>
+  </template>
+  <template name="Composing">
+    <version>{Agent} was composing.</version>
+    <version>{Agent} was composing in {Location}.</version>
+    <version>{Agent} composed {Object}.</version>
+    <version>{Agent} composed {Object} in {Location}.</version>
+  </template>
+  <template name="Confirmation">
+    <!-- AGENT in the DB! Should be patient -->
+    <version>{Agent} was confirmed.</version>
+    <version>{Agent} was confirmed in {Location}.</version>
+  </template>
+  <template name="Conscription">
+    <version>{Patient} was conscripted.</version>
+    <version>{Patient} was conscripted in {Location}.</version>
+  </template>
+  <template name="Conversation">
+    <version>{Agent} held a conversation.</version>
+    <version>{Agent} held a conversation in {Location}.</version>
+    <version>{Agent} held a conversation on {Object}.</version>
+    <version>{Agent} held a conversation on {Object} in {Location}.</version>
+  </template>
+  <template name="Correspondence">
+    <version>{Agent} sent a letter to {Recipient}.</version>
+    <version>{Agent} sent a letter from {Location} to {Recipient}.</version>
+    <version>{Agent} sent a letter to {Recipient} discussing {Beneficiary}.</version>
+    <version>{Agent} sent a letter from {Location} to {Recipient} discussing {Beneficiary}.</version>
+  </template>
+  <template name="Death">
+    <version>{Agent} died.</version>
+    <version>{Agent} died in {Location}.</version>
+  </template>
+  <template name="Demotion">
+    <version>{Patient} was demoted.</version>
+    <version>{Patient} was demoted in {Location}.</version>
+  </template>
+  <template name="Departure">
+    <version>{Agent} departed.</version>
+    <version>{Agent} departed from {Location}.</version>
+  </template>
+  <template name="Dismissal">
+    <!-- AGENT in the DB! Should be patient -->
+    <version>{Agent} was dismissed.</version>
+    <version>{Agent} was dismissed in {Location}.</version>
+  </template>
+  <!-- The following will be removed in final version -->
+  <template name="Draft">
+    <version>{Agent} made a draft on {Beneficiary}.</version>
+    <version>{Agent} made a draft on {Beneficiary} in {Location}.</version>
+  </template>
+  <template name="Editing">
+    <version>{Agent} edited {Object}.</version>
+    <version>{Agent} edited {Object} in {Location}.</version>
+    <version>{Agent} edited {Object} on {Beneficiary}.</version>
+    <version>{Agent} edited {Object} on {Beneficiary} in {Location}.</version>
+  </template>
+  <template name="End of Correspondence">in {Location}
+    <version>{Agent} ended correspondence with {Recipient}.</version>
+    <version>{Agent} ended correspondence with {Recipient} in {Location}.</version>
+  </template>
+  <template name="Engagement">
+    <version>{Agent} got engaged.</version>
+    <version>{Agent} got engaged in {Location}.</version>
+  </template>
+  <template name="Enrollment">
+    <!-- The first template exists in the database, but may be an error
+         (Patient instead of Location?) -->
+    <version>{Agent} got enrolled in {Location}.</version>
+    <version>{Agent} got enrolled at {Patient}.</version>
+    <version>{Agent} got enrolled at {Patient} in {Location}.</version>
+  </template>
+  <template name="Examination">
+    <version>{Agent} examined {Patient}.</version>
+    <version>{Agent} examined {Patient} in {Location}.</version>
+  </template>
+  <template name="Change of Major">
+    <version>{Agent} changed his/her major in {Location}.</version>
+  </template>
+  <template name="Flirt">
+    <version>{Agent} flirted with {Patient}.</version>
+    <version>{Agent} flirted with {Patient} in {Location}.</version>
+  </template>
+  <template name="Foundation">
+    <version>{Agent} founded {Patient}.</version>
+    <version>{Agent} founded {Patient} in {Location}.</version>
+  </template>
+  <template name="Friendship">
+    <version>{Agent} became friends.</version>
+    <version>{Agent} became friends in {Location}.</version>
+  </template>
+  <template name="Graduation">
+    <version>{Agent} graduated.</version>
+    <version>{Agent} graduated in {Location}.</version>
+    <version>{Agent} graduated from {Patient}.</version>
+    <version>{Agent} graduated from {Patient} in {Location}.</version>
+  </template>
+  <template name="Hiking">
+    <version>{Agent} went hiking.</version>
+    <version>{Agent} went hiking in {Location}.</version>
+  </template>
+  <template name="Hospitalization">
+    <!-- AGENT in the DB! Should be patient -->
+    <version>{Agent} was hospitalized.</version>
+    <version>{Agent} was hospitalized in {Location}.</version>
+  </template>
+  <template name="Illness">
+    <version>{Agent} fell sick.</version>
+    <version>{Agent} fell sick in {Location}.</version>
+  </template>
+  <template name="Inauguration">
+    <!-- Unclear meaning with Object -->
+    <version>{Agent} inaugurated as {Object}.</version>
+    <version>{Agent} inaugurated as {Object} in {Location}.</version>
+    <version>{Agent} inaugurated {Patient}.</version>
+    <version>{Agent} inaugurated {Patient} in {Location}.</version>
+  </template>
+  <template name="Invitation">
+    <version>{Agent} invited {Patient}.</version>
+  </template>
+  <template name="Listening">
+    <version>{Agent} listened to {Object}.</version>
+    <version>{Agent} listened to {Object} in {Location}.</version>
+  </template>
+  <template name="Marriage">
+    <version>{Agent} got married.</version>
+    <version>{Agent} got married in {Location}.</version>
+  </template>
+  <template name="Marriage Proposal">
+    <version>{Agent} proposed marriage to {Patient}.</version>
+    <version>{Agent} proposed marriage to {Patient} in {Location}.</version>
+  </template>
+  <template name="Meeting">
+    <!-- Basically the same as Appointment -->
+    <version>{Agent} met.</version>
+    <version>{Agent} met in {Location}.</version>
+  </template>
+  <template name="Offer">
+    <version>{Agent} made an offer to {Patient} in {Location}.</version>
+  </template>
+  <template name="Performance">
+    <version>{Agent} performed in {Location}.</version>
+    <version>{Agent} performed {Object} in {Location}.</version>
+  </template>
+  <template name="Publishing">
+    <version>{Object} was published.</version>
+    <version>{Object} was published in {Location}.</version>
+    <version>{Agent} published {Object}.</version>
+    <version>{Agent} published {Object} in {Location}.</version>
+  </template>
+  <template name="Punishment">
+    <version>{Patient} was punished in {Location}.</version>
+  </template>
+  <template name="Reading">
+    <version>{Agent} read {Object}.</version>
+    <version>{Agent} read {Object} in {Location}.</version>
+    <version>{Agent} read {Object} on {Beneficiary}.</version>
+    <version>{Agent} read {Object} on {Beneficiary} in {Location}.</version>
+  </template>
+  <template name="Recuperation">
+    <version>{Agent} recuperated.</version>
+    <version>{Agent} recuperated in {Location}.</version>
+  </template>
+  <template name="Release">
+    <!-- AGENT in the DB! Should be patient -->
+    <version>{Agent} was released.</version>
+    <version>{Agent} was released from {Location}.</version>
+
+    <version>{Patient} was released.</version>
+    <version>{Patient} was released from {Location}.</version>
+    <version>{Agent} released {Patient}.</version>
+    <version>{Agent} released {Patient} from {Location}.</version>
+  </template>
+  <template name="Relief">
+    <version>{Agent} reliefed {Patient}.</version>
+    <version>{Agent} reliefed {Patient} in {Location}.</version>
+  </template>
+  <template name="Relocation">
+    <version>{Agent} moved to {Location}.</version>
+  </template>
+  <template name="Resignation">
+    <version>{Agent} resigned from {Patient} in {Location}.</version>
+  </template>
+  <template name="Start of Correspondence">
+    <version>{Agent} entered into correspondence with {Recipient}.</version>
+    <version>{Agent} entered into correspondence with {Recipient} in {Location}.</version>
+  </template>
+  <template name="Teaching">
+    <version>{Agent} taught.</version>
+    <version>{Agent} taught in {Location}.</version>
+    <version>{Agent} taught {Object}.</version>
+    <version>{Agent} taught {Object} in {Location}.</version>
+    <version>{Agent} taught on {Beneficiary}.</version>
+    <version>{Agent} taught on {Beneficiary} in {Location}.</version>
+    <version>{Agent} taught {Object} on {Beneficiary}.</version>
+    <version>{Agent} taught {Object} on {Beneficiary} in {Location}.</version>
+  </template>
+  <template name="Training">
+    <version>{Agent} underwent a training.</version>
+    <version>{Agent} underwent a training in {Location}.</version>
+  </template>
+  <template name="Translation">
+    <version>{Agent} translated {Object}.</version>
+    <version>{Agent} translated {Object} in {Location}.</version>
+    <version>{Agent} translated {Object} on {Beneficiary}.</version>
+    <version>{Agent} translated {Object} on {Beneficiary} in {Location}.</version>
+  </template>
+  <template name="Travel">
+    <version>{Agent} travelled to {Location}.</version>
+  </template>
+  <template name="Unenrollment">
+    <!-- The first template exists in the database, but may be an error
+         (Patient instead of Location?) -->
+    <version>{Agent} unenrolled in {Location}.</version>
+    <version>{Agent} unenrolled from {Patient}.</version>
+    <version>{Agent} unenrolled from {Patient} in {Location}.</version>
+  </template>
+  <template name="Visit">
+    <version>{Agent} visited {Patient}.</version>
+    <version>{Agent} visited {Patient} in {Location}.</version>
+  </template>
+  <template name="Writing">
+    <!-- The following collides with correspondence -->
+    <version>{Agent} wrote {Patient}.</version>
+    <version>{Agent} wrote {Patient} from {Location}.</version>
+
+    <version>{Agent} was writing.</version>
+    <version>{Agent} was writing in {Location}.</version>
+    <version>{Agent} wrote {Object}.</version>
+    <version>{Agent} wrote {Object} in {Location}.</version>
+    <version>{Agent} wrote {Object} on {Beneficiary} in {Location}.</version>
+    <version>{Agent} wrote on {Beneficiary}.</version>
+    <version>{Agent} wrote on {Beneficiary} in {Location}.</version>
+    <version>{Object} was written.</version>
+    <version>{Object} was written in {Location}.</version>
+  </template>
+</templates>

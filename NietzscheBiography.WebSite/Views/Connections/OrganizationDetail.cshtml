@@ -1,0 +1,9 @@
+﻿@model NietzscheBiography.WebSite.ViewModels.Connections.Detail
+@{
+    ViewBag.Title = Model.Organization.Name + " : Nietzsche Biography";
+    ViewBag.ActiveParticipant = Model.Participant;
+    ViewBag.Description = "";
+}
+<header class="page-header">
+    <h1>@Model.Organization.Name</h1>
+</header>
